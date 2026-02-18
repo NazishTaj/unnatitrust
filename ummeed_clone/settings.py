@@ -65,8 +65,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-
+TIME_ZONE = 'Asia/Kolkata'
+USE_TZ = True
 
 
 MEDIA_URL = '/media/'
