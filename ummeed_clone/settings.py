@@ -4,7 +4,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'dummy-secret-key'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com',
+    'unnatitrust.in',
+    'www.unnatitrust.in']
 
 INSTALLED_APPS = [
     'jazzmin',
