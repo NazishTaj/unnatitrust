@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Carousel Section -->
+<section class="pt-60 pb-40">
+    <div class="container">
+        <!-- no arrows, auto slider only -->
+        <div id="contactSlider" class="bs-carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+
+            <div class="carousel-inner rounded">
+
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644"
+                         class="d-block w-100 contact-img" alt="Slide 1">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7"
+                         class="d-block w-100 contact-img" alt="Slide 2">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6"
+                         class="d-block w-100 contact-img" alt="Slide 3">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Contact Info Section -->
+<section class="contact-wrap pb-80">
+    <div class="container">
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <div class="contact-card">
+                    <i class="ri-phone-line"></i>
+                    <h4>Call Us</h4>
+                    <p>+91 9117080900</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="contact-card">
+                    <i class="ri-mail-line"></i>
+                    <h4>Email</h4>
+                    <p>info@unnatitrust.in</p>
+                  
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="contact-card">
+                    <i class="ri-map-pin-line"></i>
+                    <h4>Address</h4>
+                    <p>Patna, Bihar, India</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+/* bigger and better looking slider */
+.contact-img {
+    height: 420px;        /* increased height */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* mobile responsive height */
+@media (max-width: 768px) {
+    .contact-img {
+        height: 250px;
+    }
+}
+
+.contact-wrap {
+    background: #f8f9fa;
+    padding-top: 40px;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card i {
+    font-size: 40px;
+    color: #ba3256;
+    margin-bottom: 15px;
+}
+
+/* hide dots if theme adds them */
+.carousel-indicators {
+    display: none !important;
+}
+</style>
+
+{% endblock %}

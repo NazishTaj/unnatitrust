@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+.terms-card {
+    max-width: 900px;
+    margin: 150px auto 60px; /* top margin increase */
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+}
+
+.terms-card h2 {
+    text-align: center;
+    margin-bottom: 100px;
+    color: #ba3256;
+}
+
+.terms-card ul {
+    padding-left: 20px;
+}
+
+.terms-card ul li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+.terms-list {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.terms-list li {
+    margin-bottom: 10px;
+}
+
+</style>
+
+<div class="terms-card">
+    
+    <ul>
+        <h5>Terms & Conditions</h5>
+        <li>We own and control the copyright of all materials and intellectual property displayed on our website.</li>
+        <li>All copyright and intellectual property rights on this website are reserved.</li>
+        <li>You may view pages from our website through a web browser.</li>
+        <li>You may print pages from our website for personal use.</li>
+        <li>You may use our website services through a web browser, subject to these terms.</li>
+        <li>You must not sell, rent, or sub-license any material from our website.</li>
+        <li>You must not display any material from our website in public.</li>
+        <li>You must not exploit website material for commercial purposes.</li>
+        <li>You must not use the website in any way that causes or may cause damage or affects its performance, availability, or accessibility.</li>
+        <li>You must not perform automated data collection activities such as data mining, harvesting, or extraction without our written permission.</li>
+        <li>We take the protection of our copyright very seriously.</li>
+    </ul>
+</div>
+
+{% endblock %}

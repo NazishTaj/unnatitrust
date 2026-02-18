@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="pt-100 pb-70">
+    <div class="container">
+        <div class="section-title text-center mb-40">
+            <h2>Gallery</h2>
+        </div>
+
+        <div class="row">
+            {% for img in images %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="gallery-item">
+                    <img src="{{ img.image.url }}" class="img-fluid" alt="{{ img.title }}">
+                    <h5 class="text-center mt-2">{{ img.title }}</h5>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

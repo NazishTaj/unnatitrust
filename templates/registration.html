@@ -1,0 +1,499 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+    <style>
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.975rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #f4f4f4;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0.25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+    </style>
+    <style>
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 58px !important;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #f1f1f1 !important;
+            background-image: none;
+            border: 0;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+    </style>
+
+
+        <section class="breadcrumb-wrap bg-f br-bg-1"
+         style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7'); 
+                background-size: cover; 
+                background-position: center;">
+    
+    <div class="overlay op-6 bg-black"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-10 offset-md-1">
+                <div class="breadcrumb-title text-center">
+                    <h2 style="color: #fff;">Online Registration Form</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <section class="Login-wrap pt-50 pb-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="section-title style1 text-center mb-40">
+                          
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 col-lg-12">
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h3>Student Details</h3>
+                            </div>
+                        </div>
+
+
+                        <form name="myform" action="{% url 'register' %}" method="post">
+                        {% csrf_token %}
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="First_Name">First Name*</label>
+                                        <input type="text" name="First_Name" id="First_Name" placeholder="Enter First Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="Last_Name">Last Name*</label>
+                                        <input type="text" name="Last_Name" id="Last_Name" placeholder="Enter Last Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="email">Email Address*</label>
+                                        <input type="email" name="email" id="email" placeholder="Enter Email Address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number*</label>
+                                        <input type="text" name="phone" id="phone"
+       placeholder="Enter Phone Number"
+       maxlength="10"
+       pattern="[0-9]{10}"
+       required>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="phone">Gender*</label>
+                                    <div class="form-group">
+                                        <select class="form-control js-example-tags" id="service" name="gender">
+  <option value="">Select Gender*</option>
+  <option value="male"> Male</option>
+  <option value="female"> Female</option>
+</select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="education">Education*</label>
+                                    <div class="form-group">
+                                        <select class="form-control js-example-tags" id="service" name="education">
+  <option value="">Select Education*</option>
+  <option value="10">  10</option>
+  <option value="inter"> 10+ 2</option>
+  <option value="Graduation or Btech"> Graduation/B.tech</option>
+  <option value="Others"> Others</option>
+</select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="phone">Category*</label>
+                                    <div class="form-group">
+                                        <select class="form-control js-example-tags" id="service" name="category">
+  <option value="">Select Category*</option>
+  <option value="OBC">  OBC</option>
+  <option value="General">General</option>
+  <option value="Minority"> Minority</option>
+  <option value="Others"> Others</option>
+</select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="country">Nationality*</label>
+                                        <input type="text" name="country" id="country" placeholder="Indian">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="street">Date Of Birth (dd-mm-yyyy)</label>
+                                        <div id="" class="input-group date" data-date-format="dd-mm-yyyy">
+                                            <input class="form-control" name="dob" type="text" />
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h3>Parent Details</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="fname">Father's Name*</label>
+                                        <input type="text" name="father" placeholder="Enter Father Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="lname">Mother's Name*</label>
+                                        <input type="text" name="mother" placeholder="Enter Mother Name">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="fphone">Father's Phone Number*</label>
+                                         <input type="text" name="fphone" id="fphone" placeholder="Enter Phone Number" maxlength="10"pattern="[0-9]{10}"required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="mphone">Mother's Phone Number</label>
+                                          <input type="text" name="mphone" id="mphone"
+       placeholder="Enter Phone Number"
+       maxlength="10"
+       pattern="[0-9]{10}"
+       required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="lname">Parent Occupation</label>
+                                        <input type="text" name="occupation" placeholder="Parent Occupation">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="lname">Annual Income</label>
+                                        <input type="text" name="income" placeholder="Annual Income">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="street">Address</label>
+                                        <input type="text" name="address" id="street" placeholder="Address">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="street">State</label>
+                                        <select type="text" class="form-control js-example-tags" name="state" id="State" placeholder="State">	
+			<option value="Andaman and Nicobar Island (UT)">Andaman and Nicobar Island (UT)</option>
+<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+<option value="Assam">Assam</option>
+<option value="Bihar">Bihar</option>
+<option value="Chandigarh (UT)">Chandigarh (UT)</option>
+<option value="Chhattisgarh">Chhattisgarh</option>
+<option value="Dadra and Nagar Haveli (UT)">Dadra and Nagar Haveli (UT)</option>
+<option value="Daman and Diu (UT)">Daman and Diu (UT)</option>
+<option value="Delhi (NCT)">Delhi (NCT)</option>
+<option value="Goa">Goa</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Haryana">Haryana</option>
+<option value="Himachal Pradesh">Himachal Pradesh</option>
+<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+<option value="Jharkhand">Jharkhand</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Kerala">Kerala</option>
+<option value="Lakshadweep (UT)">Lakshadweep (UT)</option>
+<option value="Madhya Pradesh">Madhya Pradesh</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Manipur">Manipur</option>
+<option value="Meghalaya">Meghalaya</option>
+<option value="Mizoram">Mizoram</option>
+<option value="Nagaland">Nagaland</option>
+<option value="Odisha">Odisha</option>
+<option value="Puducherry (UT)">Puducherry (UT)</option>
+<option value="Punjab">Punjab</option>
+<option value="Rajasthan">Rajasthan</option>
+<option value="Sikkim">Sikkim</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Telangana">Telangana</option>
+<option value="Tripura">Tripura</option>
+<option value="Uttarakhand">Uttarakhand</option>
+<option value="Uttar Pradesh">Uttar Pradesh</option>
+<option value="West Bengal">West Bengal</option>
+
+	</select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="phone">Select Program*</label>
+                                    <div class="form-group">
+                                        <select class="form-control js-example-tags" id="courseid" name="program">
+    <option value="">Select Program</option>
+                   <option value="Technical Program">Technical Program</option>
+                                    <option value="Para-Medical">Para-Medical</option>
+                                    <option value="Management Program">Management Program</option>
+                                    <option value="Others">Others </option>
+                    
+</select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="phone">Select Course*</label>
+                                    <div class="form-group">
+                                        <select class="form-control" id="coursesub" name="course">
+    <option value="">Select Course*</option>
+
+    <optgroup label="Engineering">
+        <option value="Aeronautics Engineering">Aeronautics Engineering</option>
+        <option value="Automobile Engineering">Automobile Engineering</option>
+        <option value="Biomedical Engineering">Biomedical Engineering</option>
+        <option value="Biotechnology Engineering">Biotechnology Engineering</option>
+        <option value="Chemical Engineering">Chemical Engineering</option>
+        <option value="Civil Engineering">Civil Engineering</option>
+        <option value="Computer Science Engineering">Computer Science Engineering</option>
+        <option value="Electrical & Electronics Engineering">Electrical & Electronics Engineering</option>
+        <option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+        <option value="Mechanical Engineering">Mechanical Engineering</option>
+        <option value="Mechatronics Engineering">Mechatronics Engineering</option>
+        <option value="M.Tech (All Branches)">M.Tech (All Branches)</option>
+    </optgroup>
+
+    <optgroup label="IT & Programming">
+        <option value="BCA">BCA</option>
+        <option value="MCA">MCA</option>
+        <option value="MSc Software Systems">MSc Software Systems</option>
+        <option value="Diploma in Software Engineering">Diploma in Software Engineering</option>
+        <option value="Python Courses">Python Courses</option>
+        <option value="Java Courses">Java Courses</option>
+        <option value="BTech Software Engineering">BTech Software Engineering</option>
+        <option value="MTech Software Engineering">MTech Software Engineering</option>
+    </optgroup>
+
+    <optgroup label="Medical & Paramedical">
+        <option value="DMLT">DMLT</option>
+        <option value="B.Sc. Nursing">B.Sc. Nursing</option>
+        <option value="B.Sc. MLT">B.Sc. MLT</option>
+        <option value="B.Sc. Radiology">B.Sc. Radiology</option>
+        <option value="B.Sc. Anaesthesia Technology">B.Sc. Anaesthesia Technology</option>
+        <option value="B.Sc. Operation Theater Technology">B.Sc. Operation Theater Technology</option>
+        <option value="Physiotherapy">Physiotherapy</option>
+        <option value="B. Pharmacy">B. Pharmacy</option>
+        <option value="D. Pharmacy">D. Pharmacy</option>
+        <option value="Diploma Radiology">Diploma Radiology</option>
+        <option value="B.D.S">B.D.S</option>
+        <option value="B.A.M.S">B.A.M.S</option>
+        <option value="B.H.M.S">B.H.M.S</option>
+        <option value="B.U.M.S">B.U.M.S</option>
+    </optgroup>
+
+    <optgroup label="Management & Commerce">
+        <option value="B.Com">B.Com</option>
+        <option value="BBM">BBM</option>
+        <option value="BBA">BBA</option>
+        <option value="MBA">MBA</option>
+        <option value="MBA Integrated">MBA Integrated</option>
+        <option value="PGDM">PGDM</option>
+        <option value="BHM (Hotel Management)">BHM (Hotel Management)</option>
+        <option value="M.Com">M.Com</option>
+    </optgroup>
+
+    <optgroup label="Education & Law">
+        <option value="LLB">LLB</option>
+        <option value="Integrated LLB (5 Years)">Integrated LLB (5 Years)</option>
+        <option value="B.Ed">B.Ed</option>
+        <option value="D.Ed">D.Ed</option>
+        <option value="B.P.Ed">B.P.Ed</option>
+        <option value="D.P.Ed">D.P.Ed</option>
+    </optgroup>
+
+    <optgroup label="Agriculture & Other">
+        <option value="B.Sc. Agriculture">B.Sc. Agriculture</option>
+        <option value="Diploma in Agriculture">Diploma in Agriculture</option>
+        <option value="Fashion Designing">Fashion Designing</option>
+    </optgroup>
+
+</select>
+
+  <option value="">Select Course*</option>
+ 
+  
+</select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="street">Coordinator Reference No. </label>
+                                        <input type="text" name="reference" placeholder="If Not Leave Blank">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="checkbox mb-10" style="padding-left: 22px;">
+                                  
+                                         <label>
+      
+        <strong>Declaration:</strong><br><br>
+        <input type="checkbox" name="declaration_main" required>
+        मुझे यह जानकारी है कि प्रवेश (Admission) के बाद रहने-खाने (हॉस्टल-फी) तथा परीक्षा शुल्क मुझे स्वयं अदा करने होंगे। 
+        नामांकन प्रक्रिया पूर्ण होने के बाद, कोर्स की पूरी अवधि तक मुझे कॉलेज परिसर/हॉस्टल में रहकर कॉलेज के नियमों एवं अनुशासन का पालन करते हुए कोर्स पूर्ण करना होगा।<br><br>
+
+        I am aware that after the admission and enrollment process, I will have to pay the hostel fee (food and accommodation) and examination fee by myself. 
+        I also agree that after completing the enrollment process, I must stay in the college hostel premises and follow all the rules and discipline of the institution until the course is completed.
+    </label>
+
+    <br><br>
+
+    <!-- Checkbox 2 -->
+    <label>
+        
+        <strong>Registration Fee Declaration:</strong><br><br>
+<input type="checkbox" name="declaration_fee" required>
+        I understand that a registration fee of ₹1000 must be paid at the time of registration, which is mandatory and non-refundable.
+    </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-3">
+                                <div class="checkbox mb-10" style="padding-left: 22px;">
+                                    <input type="checkbox" id="ts">
+                                    <label for="ts">I Agree All Terms & Conditions</label><br>
+                                    <a class="pull-right" href="/privacypolicy" style="padding-right:30px;" target="_blank">Learn More</a>
+                                </div>
+                            </div>
+
+                            <!--<div class="form-group">-->
+                            <!--                                        <div class="g-recaptcha" data-sitekey="6LehDhQhAAAAACPDlvLqXG6TRLZklMcBV0YFjF6h-->
+                            <!--"></div>-->
+                            <!--                                    </div>-->
+                            <div class="col-lg-12 mt-3 text-center">
+                                <button type="submit" class="btn v3">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </section>
+
+
+    <script>
+        function validateform() {
+            var fname = document.myform.fname.value;
+            var gender = document.myform.gender.value;
+            var education = document.myform.education.value;
+            var category = document.myform.category.value;
+            var country = document.myform.country.value;
+            var dob = document.myform.dob.value;
+
+            var mobile = document.myform.phone.value;
+            var mobiles = document.getElementById('phone');
+            var phone = /^[0-9]{10}$/;
+            var father = document.myform.father.value;
+            var mother = document.myform.mother.value;
+            var fphone = document.myform.fphone.value;
+           "var fmobiles = document.getElementById('fphone'); "
+           <input type="number" name="fphone" id="fphone" placeholder="Enter Phone Number">
+
+            var course = document.myform.course.value;
+
+
+            if (fname == null || fname == "") {
+                alert("First name can't be blank");
+                return false;
+            } else if (mobile == null || mobile == "") {
+                alert("Mobile can't be blank");
+                return false;
+            } else if (!phone.test(mobiles.value)) {
+                alert("Valid mobile number!");
+                return false;
+            } else if (gender == null || gender == "") {
+                alert("Gender can't be blank");
+                return false;
+            } else if (education == null || education == "") {
+                alert("Education can't be blank");
+                return false;
+            } else if (category == null || category == "") {
+                alert("Category can't be blank");
+                return false;
+            } else if (country == null || country == "") {
+                alert("Nationality can't be blank");
+                return false;
+            } else if (dob == null || dob == "") {
+                alert("DOB can't be blank");
+                return false;
+            } else if (father == null || father == "") {
+                alert("Father can't be blank");
+                return false;
+            } else if (mother == null || mother == "") {
+                alert("Mother can't be blank");
+                return false;
+            } else if (fphone == null || fphone == "") {
+                alert("Father phone Number can't be blank");
+                return false;
+            } else if (!phone.test(fmobiles.value)) {
+                alert("Valid Father Phone Number");
+                return false;
+            } else if (course == null || course == "") {
+                alert("Course can't be blank");
+                return false;
+            }
+
+        }
+    </script>
+
+  
+
+{%endblock%}

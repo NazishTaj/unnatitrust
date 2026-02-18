@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+.course-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    height: 100%;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ba3256;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 8px;
+}
+
+.course-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 15px;
+}
+
+.course-card ul li:last-child {
+    border-bottom: none;
+}
+</style>
+
+<!-- Page Title -->
+<section class="Login-wrap pt-30 pb-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title style1 text-center mb-40">
+                    <h2>Course List</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section class="project-details-wrap pt-20 pb-60">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Engineering -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <h3>Engineering</h3>
+                    <ul>
+                        <li>Aeronautics Engineering</li>
+                        <li>Automobile Engineering</li>
+                        <li>Biomedical Engineering</li>
+                        <li>Biotechnology Engineering</li>
+                        <li>Chemical Engineering</li>
+                        <li>Civil Engineering</li>
+                        <li>Computer Science Engineering</li>
+                        <li>Electrical & Electronics Engineering</li>
+                        <li>Electronics & Communication Engineering</li>
+                        <li>Mechanical Engineering</li>
+                        <li>Mechatronics Engineering</li>
+                        <li>M.Tech (All Branches)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- IT & Programming -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <h3>IT & Programming</h3>
+                    <ul>
+                        <li>BCA</li>
+                        <li>MCA</li>
+                        <li>MSc Software Systems</li>
+                        <li>Diploma in Software Engineering</li>
+                        <li>Python Courses</li>
+                        <li>Java Courses</li>
+                        <li>BTech Software Engineering</li>
+                        <li>MTech Software Engineering</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Medical & Paramedical -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <h3>Medical & Paramedical</h3>
+                    <ul>
+                        <li>DMLT</li>
+                        <li>B.Sc. Nursing</li>
+                        <li>B.Sc. MLT</li>
+                        <li>B.Sc. Radiology</li>
+                        <li>B.Sc. Anaesthesia Technology</li>
+                        <li>B.Sc. Operation Theater Technology</li>
+                        <li>Physiotherapy</li>
+                        <li>B. Pharmacy</li>
+                        <li>D. Pharmacy</li>
+                        <li>Diploma Radiology</li>
+                        <li>B.D.S</li>
+                        <li>B.A.M.S</li>
+                        <li>B.H.M.S</li>
+                        <li>B.U.M.S</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Management & Commerce -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <h3>Management & Commerce</h3>
+                    <ul>
+                        <li>B.Com</li>
+                        <li>BBM</li>
+                        <li>BBA</li>
+                        <li>MBA</li>
+                        <li>MBA Integrated</li>
+                        <li>PGDM</li>
+                        <li>BHM (Hotel Management)</li>
+                        <li>M.Com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education & Law -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <h3>Education & Law</h3>
+                    <ul>
+                        <li>LLB</li>
+                        <li>Integrated LLB (5 Years)</li>
+                        <li>B.Ed</li>
+                        <li>D.Ed</li>
+                        <li>B.P.Ed</li>
+                        <li>D.P.Ed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Agriculture & Other -->
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <h3>Agriculture & Other</h3>
+                    <ul>
+                        <li>B.Sc. Agriculture</li>
+                        <li>Diploma in Agriculture</li>
+                        <li>Fashion Designing</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

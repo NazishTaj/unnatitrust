@@ -1,0 +1,46 @@
+
+<div style="max-width:700px;margin:60px auto;padding:50px;border:1px solid #ddd;border-radius:8px;background:#fff;">
+    
+    <h2 style="text-align:center;color:green;">Registration Successful !</h2>
+    <hr>
+
+    <h3 style="text-align:center;">Registration Receipt</h3>
+
+    <table style="width:100%;margin-top:30px;">
+        <tr>
+            <td><strong>Student ID:</strong></td>
+            <td>{{ student.student_id }}</td>
+        </tr>
+        <tr>
+            <td><strong>Name:</strong></td>
+            <td>{{ student.First_Name }} {{ student.Last_Name }}</td>
+        </tr>
+        <tr>
+            <td><strong>Email:</strong></td>
+            <td>{{ student.email }}</td>
+        </tr>
+        <tr>
+            <td><strong>Phone:</strong></td>
+            <td>{{ student.phone }}</td>
+        </tr>
+        <tr>
+            <td><strong>Course:</strong></td>
+            <td>{{ student.course }}</td>
+        </tr>
+        <tr>
+            <td><strong>Date:</strong></td>
+            <td>{{ student.created_at }}</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <div style="text-align:center;margin-top:20px;">
+        <button onclick="window.print()" style="padding:10px 20px;background:#007bff;color:white;border:none;border-radius:5px;">
+            Print Receipt
+        </button>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,333 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumb Section -->
+<section class="breadcrumb-wrap br-bg-1 university-hero">
+    <div class="overlay op-6 bg-black"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-title text-center">
+                    <h2>University Search</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+.university-hero {
+    
+    background-size: cover;
+    background-color: #f31717;
+    background-position: center;
+    padding: 60px 0;   /* reduced height */
+    position: relative;
+}
+
+.university-hero .breadcrumb-title h2 {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 600;
+    margin: 0;
+}
+</style>
+
+<!-- University Search Section -->
+<section class="Login-wrap pt-60 pb-60">
+ 
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-12">
+                <div class="login-form">
+                    <div class="login-body">
+
+                        <!-- FORM -->
+                        <form class="form-wrap" onsubmit="searchUniversity(event)">
+
+                            <div class="row">
+
+                                <!-- State dropdown -->
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <select class="form-control" id="sid">
+                                            <option value="">Select State*</option>
+                                            <option value="up">Uttar Pradesh</option>
+                                            <option value="haryana">Haryana</option>
+                                            <option value="punjab">Punjab</option>
+                                            <option value="rajasthan">Rajasthan</option>
+                                            <option value="odisha">Odisha</option>
+                                            <option value="uttarakhand">Uttarakhand</option>
+                                            <option value="karnataka">Karnataka</option>
+                                            <option value="mp">Madhya Pradesh</option>
+                                            <option value="tamilnadu">Tamil Nadu</option>
+                                            <option value="andhra">Andhra Pradesh</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- University dropdown -->
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <select class="form-control" id="uniid">
+                                            <option value="">Select State first*</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Button -->
+                                <div class="col-lg-2">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn v1 w-100">Search</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Info Section -->
+<section class="pt-60 pb-60" style="background:#f8f9fa;">
+    <div class="container">
+        <div class="row text-center mb-40">
+            <div class="col-lg-12">
+                <h2>Why Choose Government Universities?</h2>
+                <p>Government universities provide affordable, recognized, and quality education across India.</p>
+            </div>
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <i class="ri-graduation-cap-line"></i>
+                    <h4>Recognized Degrees</h4>
+                    <p>All universities are approved by government bodies like AICTE, UGC, and NAAC.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <i class="ri-money-rupee-circle-line"></i>
+                    <h4>Affordable Education</h4>
+                    <p>Lower tuition fees compared to private institutions.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card">
+                    <i class="ri-building-2-line"></i>
+                    <h4>Trusted Institutions</h4>
+                    <p>State and central universities with strong academic reputation.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Quote Section -->
+<section class="pt-60 pb-60 text-center" style="background:#ffffff;">
+    <div class="container">
+        <h2>Student Motivation</h2>
+        <p class="quote">
+            “Education is the most powerful weapon which you can use to change the world.”  
+            <br><strong>– Nelson Mandela</strong>
+        </p>
+    </div>
+</section>
+
+<!-- Useful Links Section -->
+<section class="pt-60 pb-60" style="background:#f8f9fa;">
+    <div class="container">
+        <div class="row text-center mb-40">
+            <div class="col-lg-12">
+                <h2>Useful Study & Career Links</h2>
+            </div>
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col-md-3">
+                <div class="link-card">
+                    <h5>UGC Official</h5>
+                    <a href="https://www.ugc.gov.in" target="_blank">Visit Website</a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="link-card">
+                    <h5>AICTE</h5>
+                    <a href="https://www.aicte-india.org" target="_blank">Visit Website</a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="link-card">
+                    <h5>National Career Service</h5>
+                    <a href="https://www.ncs.gov.in" target="_blank">Visit Website</a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="link-card">
+                    <h5>Skill India</h5>
+                    <a href="https://www.skillindia.gov.in" target="_blank">Visit Website</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Education Updates Section -->
+<section class="pt-60 pb-60" style="background:#ffffff;">
+    <div class="container">
+        <div class="row text-center mb-40">
+            <div class="col-lg-12">
+                <h2>Latest Education & Career Tips</h2>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="tip-card">
+                    <h5>Choose the Right Course</h5>
+                    <p>Select a course based on your interest, not just popularity.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="tip-card">
+                    <h5>Focus on Skills</h5>
+                    <p>Along with your degree, learn practical skills like communication and technology.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="tip-card">
+                    <h5>Internships Matter</h5>
+                    <p>Try to gain internship experience during your course for better career opportunities.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+.info-card, .link-card, .tip-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.info-card:hover, .link-card:hover, .tip-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card i {
+    font-size: 40px;
+    color: #ba3256;
+    margin-bottom: 10px;
+}
+
+.quote {
+    font-size: 20px;
+    color: #444;
+    max-width: 700px;
+    margin: auto;
+}
+
+.link-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ba3256;
+    font-weight: 600;
+}
+</style>
+
+
+<!-- JavaScript -->
+<script>
+const universities = {
+    up: [
+        "Dr. A.P.J. Abdul Kalam Technical University",
+        "Chaudhary Charan Singh University"
+    ],
+    haryana: [
+        "Maharshi Dayanand University",
+        "Kurukshetra University",
+        "Deenbandhu Chhotu Ram University of Science and Technology"
+    ],
+    punjab: [
+        "I.K. Gujral Punjab Technical University",
+        "Baba Farid University of Health Sciences"
+    ],
+    rajasthan: [
+        "Rajasthan Technical University, Kota (RTU)"
+    ],
+    odisha: [
+        "Biju Patnaik University of Technology"
+    ],
+    uttarakhand: [
+        "Uttarakhand Technical University"
+    ],
+    karnataka: [
+        "Visvesvaraya Technological University (VTU)"
+    ],
+    mp: [
+        "Rajiv Gandhi Proudyogiki Vishwavidyalaya"
+    ],
+    tamilnadu: [
+        "Anna University"
+    ],
+    andhra: [
+        "Jawaharlal Nehru Technological University (JNTU)"
+    ]
+};
+
+document.getElementById("sid").addEventListener("change", function () {
+    let state = this.value;
+    let uniSelect = document.getElementById("uniid");
+
+    uniSelect.innerHTML = "<option value=''>Select University</option>";
+
+    if (universities[state]) {
+        universities[state].forEach(function (uni) {
+            let option = document.createElement("option");
+            option.value = uni;
+            option.textContent = uni;
+            uniSelect.appendChild(option);
+        });
+    }
+});
+
+function searchUniversity(event) {
+    event.preventDefault();
+
+    let uni = document.getElementById("uniid").value;
+
+    if (!uni) {
+        alert("Please select a university first.");
+        return;
+    }
+
+    let query = encodeURIComponent(uni);
+    let googleURL = "https://www.google.com/search?q=" + query;
+
+    window.open(googleURL, "_blank");
+}
+</script>
+
+{% endblock %}
