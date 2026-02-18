@@ -13,7 +13,7 @@ STATICFILES_DIRS = [
 
 
 SECRET_KEY = 'dummy-secret-key'
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['.onrender.com',
     'unnatitrust.in',
     'www.unnatitrust.in']
@@ -32,12 +32,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 ]
+
 
 ROOT_URLCONF = 'ummeed_clone.urls'
 
@@ -64,8 +66,7 @@ DATABASES = {
     }
 }
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 
 
 MEDIA_URL = '/media/'
