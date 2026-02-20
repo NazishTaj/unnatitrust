@@ -7,7 +7,7 @@ SECRET_KEY = 'dummy-secret-key'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '.onrender.com',
+    '76.13.244.125',
     'unnatitrust.in',
     'www.unnatitrust.in'
 ]
