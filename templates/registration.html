@@ -82,7 +82,7 @@
                         </div>
 
 
-                        <form name="myform" action="{% url 'student_registration' %}" method="post" enctype="multipart/form-data" onsubmit="return validateform()">
+                        <form name="myform" action="{% url 'register' %}" method="post" enctype="multipart/form-data" onsubmit="return validateform()">
                         {% csrf_token %}
 
                             <div class="row">
