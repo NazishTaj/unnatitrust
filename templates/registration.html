@@ -82,7 +82,7 @@
                         </div>
 
 
-                        <form name="myform" action="{% url 'register' %}" method="post">
+                        <form name="myform" action="{% url 'register' %}" method="post" enctype="multipart/form-data" onsubmit="return validateform()">
                         {% csrf_token %}
 
                             <div class="row">
@@ -417,6 +417,34 @@
                             <!--                                        <div class="g-recaptcha" data-sitekey="6LehDhQhAAAAACPDlvLqXG6TRLZklMcBV0YFjF6h-->
                             <!--"></div>-->
                             <!--                                    </div>-->
+
+
+							<!-- 🔥 PAYMENT SECTION START -->
+<div class="row">
+    <div class="col-lg-12 text-center mb-4">
+        <h4>Registration Fee: ₹1000</h4>
+        <p>Scan the QR Code to make payment</p>
+
+        <img src="{% static 'images/payment_qr.jpeg' %}" 
+             alt="QR Code" 
+             style="width:200px; height:200px; border:1px solid #ddd; padding:10px;">
+
+        <p class="mt-2">After payment, upload screenshot and click Submit</p>
+
+        <p style="color:red; font-weight:bold;">
+            * Payment is mandatory. Without payment form will be rejected.
+        </p>
+    </div>
+
+    <!-- Screenshot Upload -->
+    <div class="col-lg-12">
+        <div class="form-group">
+            <label>Upload Payment Screenshot*</label>
+            <input type="file" name="payment_proof" required>
+        </div>
+    </div>
+</div>
+<!-- 🔥 PAYMENT SECTION END -->
                             <div class="col-lg-12 mt-3 text-center">
                                 <button type="submit" class="btn v3">Submit</button>
                             </div>
@@ -429,70 +457,68 @@
     </section>
 
 
-    <script>
-        function validateform() {
-            var fname = document.myform.fname.value;
-            var gender = document.myform.gender.value;
-            var education = document.myform.education.value;
-            var category = document.myform.category.value;
-            var country = document.myform.country.value;
-            var dob = document.myform.dob.value;
+<script>
+function validateform() {
+    var fname = document.myform.First_Name.value;
+    var gender = document.myform.gender.value;
+    var education = document.myform.education.value;
+    var category = document.myform.category.value;
+    var country = document.myform.country.value;
+    var dob = document.myform.dob.value;
 
-            var mobile = document.myform.phone.value;
-            var mobiles = document.getElementById('phone');
-            var phone = /^[0-9]{10}$/;
-            var father = document.myform.father.value;
-            var mother = document.myform.mother.value;
-            var fphone = document.myform.fphone.value;
-           "var fmobiles = document.getElementById('fphone'); "
-           <input type="number" name="fphone" id="fphone" placeholder="Enter Phone Number">
+    var mobile = document.myform.phone.value;
+    var mobiles = document.getElementById('phone');
+    var phone = /^[0-9]{10}$/;
 
-            var course = document.myform.course.value;
+    var father = document.myform.father.value;
+    var mother = document.myform.mother.value;
+    var fphone = document.myform.fphone.value;
+    var fmobiles = document.getElementById('fphone');
 
+    var course = document.myform.course.value;
 
-            if (fname == null || fname == "") {
-                alert("First name can't be blank");
-                return false;
-            } else if (mobile == null || mobile == "") {
-                alert("Mobile can't be blank");
-                return false;
-            } else if (!phone.test(mobiles.value)) {
-                alert("Valid mobile number!");
-                return false;
-            } else if (gender == null || gender == "") {
-                alert("Gender can't be blank");
-                return false;
-            } else if (education == null || education == "") {
-                alert("Education can't be blank");
-                return false;
-            } else if (category == null || category == "") {
-                alert("Category can't be blank");
-                return false;
-            } else if (country == null || country == "") {
-                alert("Nationality can't be blank");
-                return false;
-            } else if (dob == null || dob == "") {
-                alert("DOB can't be blank");
-                return false;
-            } else if (father == null || father == "") {
-                alert("Father can't be blank");
-                return false;
-            } else if (mother == null || mother == "") {
-                alert("Mother can't be blank");
-                return false;
-            } else if (fphone == null || fphone == "") {
-                alert("Father phone Number can't be blank");
-                return false;
-            } else if (!phone.test(fmobiles.value)) {
-                alert("Valid Father Phone Number");
-                return false;
-            } else if (course == null || course == "") {
-                alert("Course can't be blank");
-                return false;
-            }
-
-        }
-    </script>
+    if (fname == "") {
+        alert("First name can't be blank");
+        return false;
+    } else if (mobile == "") {
+        alert("Mobile can't be blank");
+        return false;
+    } else if (!phone.test(mobiles.value)) {
+        alert("Enter valid mobile number");
+        return false;
+    } else if (gender == "") {
+        alert("Select gender");
+        return false;
+    } else if (education == "") {
+        alert("Select education");
+        return false;
+    } else if (category == "") {
+        alert("Select category");
+        return false;
+    } else if (country == "") {
+        alert("Enter nationality");
+        return false;
+    } else if (dob == "") {
+        alert("Enter DOB");
+        return false;
+    } else if (father == "") {
+        alert("Enter father name");
+        return false;
+    } else if (mother == "") {
+        alert("Enter mother name");
+        return false;
+    } else if (fphone == "") {
+        alert("Enter father phone");
+        return false;
+    } else if (!phone.test(fmobiles.value)) {
+        alert("Enter valid father phone");
+        return false;
+    } else if (course == "") {
+        alert("Select course");
+        return false;
+    }
+}
+</script>
 
   
 
