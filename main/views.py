@@ -60,6 +60,7 @@ def student_registration(request):
             program=request.POST.get("program"),
             course=request.POST.get("course"),
             reference=request.POST.get("reference"),
+            payment_proof=request.FILES.get("payment_proof")
         )
         return render(request, "success.html", {"student": student})
 
