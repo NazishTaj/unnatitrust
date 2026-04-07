@@ -4,7 +4,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'dummy-secret-key'
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '76.13.244.125',
