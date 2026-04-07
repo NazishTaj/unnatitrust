@@ -36,6 +36,7 @@ class StudentRegistration(models.Model):
     program = models.CharField(max_length=100)
     course = models.CharField(max_length=100)
     reference = models.CharField(max_length=100, blank=True, null=True)
+    payment_proof = models.ImageField(upload_to='payments/', blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
 
