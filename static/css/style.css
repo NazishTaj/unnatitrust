@@ -3479,7 +3479,7 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder {
 }
 
 .br-bg-1 {
-    background-image: url(../images/header1.jpg)
+   
 }
 
 .br-bg-2 {
@@ -6973,9 +6973,6 @@ input:-ms-input-placeholder,textarea:-ms-input-placeholder {
     }
 }
 
-.promo-bg-1 {
-    background-image: url(../images/promo-bg-1.jpg)
-}
 
 .promo-bg-2 {
     background-image: url(../images/center-bg.jpg)
