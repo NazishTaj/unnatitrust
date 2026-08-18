@@ -2,433 +2,389 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid p-0">
-    <div class="carousel">
 
-        <div class="carousel__slide">
-            <div class="carousel__slide__inner">
-                <img src="{% static 'images/WEBSITE01.jpeg' %}" class="carousel__image">
+<!-- ================= HERO ================= -->
+<div class="hero-wrap">
+    <div class="container-fluid p-0">
+        <div class="carousel">
+
+            <div class="carousel__slide">
+                <div class="carousel__slide__inner">
+                    <img src="{% static 'images/WEBSITE01.jpeg' %}" class="carousel__image">
+                </div>
             </div>
-        </div>
 
-        <div class="carousel__slide">
-            <div class="carousel__slide__inner">
-                <img src="{% static 'images/WEBSITE02.jpeg' %}" class="carousel__image">
+            <div class="carousel__slide">
+                <div class="carousel__slide__inner">
+                    <img src="{% static 'images/WEBSITE02.jpeg' %}" class="carousel__image">
+                </div>
             </div>
-        </div>
 
-        <div class="carousel__slide">
-            <div class="carousel__slide__inner">
-                <img src="{% static 'images/WEBSITE03.jpeg' %}" class="carousel__image">
+            <div class="carousel__slide">
+                <div class="carousel__slide__inner">
+                    <img src="{% static 'images/WEBSITE03.jpeg' %}" class="carousel__image">
+                </div>
             </div>
-        </div>
 
+        </div>
+    </div>
+
+    <div class="hero-overlay-card">
+        <div class="hero-inner">
+            <span class="hero-tag">Shiksha Se Unnati</span>
+            <h1>100% College Fees Covered — Your Future, Our Responsibility</h1>
+            <p>Unnati Educational and Charitable Trust helps financially weak and deserving students reach higher education, by taking full responsibility of their college fees.</p>
+            <a href="tel:+91 9117080900" class="btn v1"> <i class="ri-cellphone-fill"></i> Request Call Back</a>
+            <a href="{% url 'registration' %}" class="btn v1"> <i class="ri-edit-2-fill"></i> Student Registration</a>
+        </div>
     </div>
 </div>
 
-
-
-
-
-
-  
-
-        <section class="about-wrap style2 ptb-100">
-            <div class="about-img">
-                <img src=" {% static 'images/logo2.jpeg' %}">
-            </div>
-            <div class="about-content">
-                <div class="section-title text-left style1">
-                    <span>About us</span>
-                    <h2>Unnati Educational and Charitable Trust</h2>
-                    <p>Unnati Educational and Charitable Trust is one such organization which is spreading the light of knowledge by removing the darkness of ignorance from the lives of the students. Unnati Educational and Charitable Trust is the task of
-                        taking many students out of the bleak future and putting them in the lap of light. Our aim is also to bring light into the lives of the students. </p>
-                    <div class="about-subpara">
-                        <h5><span> <img src="{% static 'images/goal.svg' %}" alt="Image"></span>Our Aim</h5>
-                        <p>The aim of Unnati Educational and Charitable Trust is to motivate the financially weak and needy students of the society to get higher education and to divert them towards higher education by taking responsibility of
-                            their 100% college fees. </p>
+<!-- ================= TRUST STRIP ================= -->
+<div class="container">
+    <div class="trust-strip">
+        <div class="row g-0">
+            <div class="col-md-4 col-sm-12">
+                <div class="trust-strip-item">
+                    <i class="ri-graduation-cap-fill"></i>
+                    <div>
+                        <h6>100% Fee Coverage</h6>
+                        <p>Full tuition support for eligible students</p>
                     </div>
-                    <a href=about/ class="btn v1"> <i class="ri-eye-line"></i> Read More</a>
                 </div>
             </div>
-        </section>
-
-
-        <div class="promo-banner-wrap style4 promo-bg-1 bg-f ptb-100"  style="background-color: #e80f28a9 !important;">
-            <div class="overlay bg-midnight op-8"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        <div class="promo-content text-center">
-
-                            <h2 class="text-white">100% of Your College Fees, Covered by Us</h2>
-                            <p class="text-white">All tuition fees for students from India and Nepal will be fully borne by the Unnati Educational and Charitable Trust. However, students are required to cover their own accommodation and examination expenses, which are kept at a nominal level. </p>
-                            <a href="tel:+91 9117080900" class="btn v1"> <i class="ri-cellphone-fill"></i> Request Call Back</a>
-                            <a href="/registration" class="btn v1"> <i class="ri-edit-2-fill"></i> Student Registration</a>
-                        </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="trust-strip-item">
+                    <i class="ri-user-voice-fill"></i>
+                    <div>
+                        <h6>Free Counselling</h6>
+                        <p>Guidance for every query, at no cost</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="trust-strip-item">
+                    <i class="ri-hand-heart-fill"></i>
+                    <div>
+                        <h6>Direct Admission</h6>
+                        <p>Simple, supported enrollment process</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
+<!-- ================= ABOUT ================= -->
+<section class="about-wrap style2 ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="about-img">
+                    <img src="{% static 'images/logo2.jpeg' %}" style="width:100%; border-radius:16px; box-shadow:0 20px 45px rgba(15,42,74,0.15);">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="about-content">
+                    <div class="section-title text-left style1">
+                        <span>About Us</span>
+                        <h2>Unnati Educational and Charitable Trust</h2>
+                        <p>Unnati Educational and Charitable Trust is one such organization which is spreading the light of knowledge by removing the darkness of ignorance from the lives of the students. Our task is taking many students out of the bleak future and putting them in the lap of light. Our aim is also to bring light into the lives of the students.</p>
+                    </div>
 
+                    <ul class="about-icon-list">
+                        <li>
+                            <div class="icon-badge"><i class="ri-service-fill"></i></div>
+                            <div>
+                                <strong>Full Support</strong>
+                                <span class="desc">End-to-end support for every enrolled student, from admission to graduation.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon-badge"><i class="ri-team-fill"></i></div>
+                            <div>
+                                <strong>Excellent Team</strong>
+                                <span class="desc">Experienced consultants across fields, always ready to help.</span>
+                            </div>
+                        </li>
+                    </ul>
 
+                    <div class="about-subpara">
+                        <h5><span><img src="{% static 'images/goal.svg' %}" alt="Image"></span>Our Aim</h5>
+                        <p>The aim of Unnati Educational and Charitable Trust is to motivate the financially weak and needy students of the society to get higher education and to divert them towards higher education by taking responsibility of their 100% college fees.</p>
+                    </div>
 
-<section class="blog-wrap pt-100 pb-70" style="overflow-x:hidden;">
+                    <a href="{% url 'about' %}" class="btn v1"> <i class="ri-eye-line"></i> Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PROMO CTA BANNER ================= -->
+<div class="promo-banner-wrap style4 promo-bg-1 bg-f ptb-100" style="background: linear-gradient(135deg, rgba(8,26,48,0.94) 0%, rgba(15,42,74,0.88) 100%);">
+    <div class="overlay bg-midnight op-8"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="promo-content text-center">
+                    <h2 class="text-white">100% of Your College Fees, Covered by Us</h2>
+                    <p class="text-white">All tuition fees for students from India and Nepal will be fully borne by the Unnati Educational and Charitable Trust. However, students are required to cover their own accommodation and examination expenses, which are kept at a nominal level.</p>
+                    <a href="tel:+91 9117080900" class="btn v1"> <i class="ri-cellphone-fill"></i> Request Call Back</a>
+                    <a href="{% url 'registration' %}" class="btn v1"> <i class="ri-edit-2-fill"></i> Student Registration</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= COURSES ================= -->
+<section class="blog-wrap pt-100 pb-70">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title style1 text-center mb-40">
+                    <span>What We Offer</span>
                     <h2>Courses Offered</h2>
                 </div>
             </div>
         </div>
 
-        <!-- Scrollable card area -->
-        <div class="row justify-content-md-center">
-            <div style="overflow-x:auto; padding-bottom:10px;">
-
-                <div style="display:flex; gap:20px; min-width:max-content;">
-
-                    <!-- Card 1 -->
-                    <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-                            <img src="{% static 'images/c1.jpg' %}" alt="Image" style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>Engineering</h3>
-                            <p>Engineering is the most famous and sought after career in India.</p>
-                        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="{% static 'images/c1.jpg' %}" alt="Image">
                     </div>
-
-                    <!-- Card 2 -->
-                    <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-                            <img src="{% static 'images/c2.jpg' %}" alt="Image" style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>Paramedical</h3>
-                            <p>Good career option in medical science with short duration.</p>
-                        </div>
+                    <div class="course-body">
+                        <h3>Engineering</h3>
+                        <p>Engineering is the most famous and sought after career in India.</p>
                     </div>
-
-                    <!-- Card 3 -->
-                    <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-                            <img src="{% static 'images/c3.jpg' %}" alt="Image" style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>Diploma</h3>
-                            <p>Diplomas help bridge gaps between academic phases.</p>
-                        </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="{% static 'images/c2.jpg' %}" alt="Image">
                     </div>
-
-                    <!-- Card 4 -->
-                    <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-                            <img src="{% static 'images/c4.jpg' %}" alt="Image" style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>Non Technical</h3>
-                            <p>Theory-oriented academic courses.</p>
-                        </div>
+                    <div class="course-body">
+                        <h3>Paramedical</h3>
+                        <p>Good career option in medical science with short duration.</p>
                     </div>
-
-                    <!-- Card 5 -->
-                    <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-                            <img src="{% static 'images/c5.jpg' %}" alt="Image" style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>Graduation</h3>
-                            <p>Focus on biological, cognitive and social development.</p>
-                        </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="{% static 'images/c3.jpg' %}" alt="Image">
                     </div>
-
+                    <div class="course-body">
+                        <h3>Diploma</h3>
+                        <p>Diplomas help bridge gaps between academic phases.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="{% static 'images/c4.jpg' %}" alt="Image">
+                    </div>
+                    <div class="course-body">
+                        <h3>Non Technical</h3>
+                        <p>Theory-oriented academic courses.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="course-img-wrap">
+                        <img src="{% static 'images/c5.jpg' %}" alt="Image">
+                    </div>
+                    <div class="course-body">
+                        <h3>Graduation</h3>
+                        <p>Focus on biological, cognitive and social development.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-        <!--<div class="promo-video-wrap">
-            <div class="container">
-                <div class="prom-dot-shape md-none">
-                    <img src="https://www.ummeedtrust.in/assetss/images/dot-shape-3.png" alt="Image">
-                </div>
-                <div class="prom-circle-shape md-none">
-                    <img src="https://www.ummeedtrust.in/assetss/images/dot-shape-3.png" alt="Image">
-                </div>
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <div class="promo-video-bg bg-f promo-bg-2">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
-
+<!-- ================= LEADERSHIP ================= -->
+<section class="blog-wrap pt-30 pb-70">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title style1 text-center mb-40">
-                    <h2>Our Top Leaderships</h2>
+                    <span>The People Behind Unnati</span>
+                    <h2>Our Top Leadership</h2>
                 </div>
             </div>
         </div>
 
-        <!-- Scrollable card area -->
-        <div class="row justify-content-md-center">
-            <div style="overflow-x:auto; padding-bottom:10px;">
-
-                <div style="display:flex; gap:20px; min-width:max-content;">
-
-                    <!-- Card 1 -->
-                    <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-                             <img src="{% static 'images/Samar.jpg' %}" alt="Image" style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>Samar Tanweer</h3>
-                            <p>Chairman</p>
-                        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="leader-card">
+                    <div class="avatar-ring">
+                        <img src="{% static 'images/Samar.jpg' %}" alt="Image">
                     </div>
-
-                    <!-- Card 2 -->
-                    <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-                        <img src="{% static 'images/fazal.jpeg' %}"  style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>Fazal Khan</h3>
-                            <p> Director</p>
-                        </div>
+                    <h3>Samar Tanweer</h3>
+                    <p>Chairman</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="leader-card">
+                    <div class="avatar-ring">
+                        <img src="{% static 'images/fazal.jpeg' %}" alt="Image">
                     </div>
-
-                    <!-- Card 3 -->
-                    <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-                           <img src="{% static 'images/Sahil.jpeg' %}" alt="Image" style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>Sahil Khan</h3>
-                            <p>Manager</p>
-                        </div>
+                    <h3>Fazal Khan</h3>
+                    <p>Director</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="leader-card">
+                    <div class="avatar-ring">
+                        <img src="{% static 'images/Sahil.jpeg' %}" alt="Image">
                     </div>
-
-                    <!-- Card 4 -->
-                    <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-
-                            <img src="{% static 'images/Nazish.jpeg' %}" style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>MD. Nazish Taj</h3>
-                            <p>Technology Advisor </p>
-                        </div>
+                    <h3>Sahil Khan</h3>
+                    <p>Manager</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="leader-card">
+                    <div class="avatar-ring">
+                        <img src="{% static 'images/Nazish.jpeg' %}" alt="Image">
                     </div>
-
-                    <!-- Card 5 -->
-                   <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-                            <img src="{% static 'images/IshaPic.jpeg' %}" alt="Image" style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>Isha Verma</h3>
-                            <p>Coordinator Manager</p>
-                        </div>
+                    <h3>MD. Nazish Taj</h3>
+                    <p>Technology Advisor</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="leader-card">
+                    <div class="avatar-ring">
+                        <img src="{% static 'images/IshaPic.jpeg' %}" alt="Image">
                     </div>
-                    <div class="blog-card" style="min-width:280px; max-width:280px; flex-shrink:0;">
-                        <a href="#" class="blog-img">
-                            <img src="{% static 'images/KajalPic.png'%}" alt="Image" style="width:100%; border-radius:6px;">
-                        </a>
-                        <div class="blog-info">
-                            <h3>Kajal Kumari</h3>
-                            <p>Coordinator Manager</p>
-                        </div>
-                    </div>                  
-                
-
+                    <h3>Isha Verma</h3>
+                    <p>Coordinator Manager</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="leader-card">
+                    <div class="avatar-ring">
+                        <img src="{% static 'images/KajalPic.png' %}" alt="Image">
+                    </div>
+                    <h3>Kajal Kumari</h3>
+                    <p>Coordinator Manager</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-        </section>
-
-       <!-- <section class="course-wrap pt-50 pb-70">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title style1 text-center mb-40">
-                            <h2>Latest Video</h2>
-                            <span> </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="news-slider2" class="owl-carousel row">
-                            <div class="post-slide col-sm-3">
-                                <div class="post-img">
-                                    <a href="#"><iframe width="100%" height="300" src="https://www.youtube.com/embed/nyQSvwQuKJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
-                                </div>
-                                <div class="post-content">
-                                    <h3 class="post-title"><a href="#">NALANDA STUDENT INTERVIEW</a></h3>
-                                </div>
-                            </div>
-                            <div class="post-slide col-sm-3">
-                                <div class="post-img">
-                                    <a href="#"><iframe width="100%" height="300" src="https://www.youtube.com/embed/Qp49tYVMtAc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
-                                </div>
-                                <div class="post-content">
-                                    <h3 class="post-title"><a href="#">MADHEPURA STUDENT INTERVIEW</a></h3>
-                                </div>
-                            </div>
-                            <div class="post-slide col-sm-3">
-                                <div class="post-img">
-                                    <a href="#"><iframe width="100%" height="300" src="https://www.youtube.com/embed/ADO0Ky2rJFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
-                                </div>
-                                <div class="post-content">
-                                    <h3 class="post-title"><a href="#">MUZAFFARPUR STUDENT INTERVIEW</a></h3>
-                                </div>
-                            </div>
-                            <div class="post-slide col-sm-3">
-                                <div class="post-img">
-                                    <a href="#"><iframe width="100%" height="300" src="https://www.youtube.com/embed/l_MXtIdJkdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
-                                </div>
-                                <div class="post-content">
-                                    <h3 class="post-title"><a href="#">VAISHALI STUDENT INTERVIEW</a></h3>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-12 text-center">
-                        <a href="https://www.ummeedtrust.in/video-gallery" class="btn v1"> <i class="ri-eye-line"></i> View All</a>
-                    </div>
-
-
-
+<!-- ================= SERVICE HIGHLIGHTS / CAMPAIGNS ================= -->
+<section class="blog-wrap pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title style1 text-center mb-40">
+                    <span>On The Ground</span>
+                    <h2>Service Highlights</h2>
                 </div>
             </div>
-        -->
-        </section>
-
-        <section class="blog-wrap pb-70">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title style1 text-center mb-40">
-                            <h2>Service Highlights</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-md-center">
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="blog-card">
-                            <a href=/ class="blog-img">
-<img src="{% static 'images/L1.jpeg' %}" alt="Image">
-</a>
-                            <div class="blog-info">
-                                <div class="blog-date">
-                                    <h6><span>04</span>Feb 2026</h6>
-                                </div>
-                                <h3>Field Campaign</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="blog-card">
-                            <a href=/ class="blog-img">
-<img src="{% static 'images/L2.jpeg' %}" alt="Image">
-</a>
-                            <div class="blog-info">
-                                <div class="blog-date">
-                                    <h6><span>12</span>Nov 2025</h6>
-                                </div>
-                                <h3>Field Campaign</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="blog-card">
-                            <a href=/class="blog-img">
-<img src="{% static 'images/L3.jpeg' %}" alt="Image">
-</a>
-                            <div class="blog-info">
-                                <div class="blog-date">
-                                    <h6><span>29</span>Jan 2025</h6>
-                                </div>
-                                <h3>Field Campaign</h3>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="blog-card">
-                            <a href=/ class="blog-img">
-<img src="{% static 'images/blog-3.jpg' %}" alt="Image">
-</a>
-                            <div class="blog-info">
-                                <div class="blog-date">
-                                    <h6><span>12</span>Jan 2022</h6>
-                                </div>
-                                <h3>Field Campaign</h3>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-
-
-        <section class="feature-wrap">
-            <div class="container-fluid px-0">
-                <div class="row gx-0 align-items-center">
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <div class="feature-item" style="background:#ff5722">
-                            <h5><a style="color:#fff" href="#">Direct Admission</a></h5>
-                            <p style="color:#fff">Unnati provides direct admission in colleges. You just have to choose your course and we will get you enrolled.</p>
-                           <!-- <a class="" href="#"><span>Read More</span><i class="ri-arrow-right-line"></i></a>-->
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <div class="feature-item">
-                            <h5><a href="#">Full Support</a></h5>
-                            <p> We offers full support to all our students. Our aim is 100% satisfaction and we maintained it so far successfully.</p>
-                          
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <div class="feature-item" style="background:#ff5722">
-                            <h5><a style="color:#fff" href="#">Free Counselling</a></h5>
-                            <p style="color:#fff">Gives free counselling to everyone. If you have any queries relating to your study, then we will be happy to help you.</p>
-                            
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <div class="feature-item">
-                            <h5><a href="#">Excellent Team</a></h5>
-                            <p>We have an excellent team of experienced consultants of various fields. Our team is always ready to help you,</p>
-                           
-                        </div>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="campaign-card">
+                    <div class="campaign-date"><span class="day">04</span><span class="month">Feb 2026</span></div>
+                    <a href="/"><img src="{% static 'images/L1.jpeg' %}" alt="Image"></a>
+                    <div class="campaign-body">
+                        <h3>Field Campaign</h3>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="campaign-card">
+                    <div class="campaign-date"><span class="day">12</span><span class="month">Nov 2025</span></div>
+                    <a href="/"><img src="{% static 'images/L2.jpeg' %}" alt="Image"></a>
+                    <div class="campaign-body">
+                        <h3>Field Campaign</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="campaign-card">
+                    <div class="campaign-date"><span class="day">29</span><span class="month">Jan 2025</span></div>
+                    <a href="/"><img src="{% static 'images/L3.jpeg' %}" alt="Image"></a>
+                    <div class="campaign-body">
+                        <h3>Field Campaign</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="campaign-card">
+                    <div class="campaign-date"><span class="day">12</span><span class="month">Jan 2022</span></div>
+                    <a href="/"><img src="{% static 'images/blog-3.jpg' %}" alt="Image"></a>
+                    <div class="campaign-body">
+                        <h3>Field Campaign</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        {% endblock %}
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="feature-wrap pb-100" style="background:var(--uet-bg-soft); padding-top:70px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title style1 text-center mb-40">
+                    <span>Why Families Trust Us</span>
+                    <h2>Why Choose Unnati</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="icon-feature-box">
+                    <div class="icon-circle"><i class="ri-graduation-cap-fill"></i></div>
+                    <h5>Direct Admission</h5>
+                    <p>Unnati provides direct admission in colleges. You just have to choose your course and we will get you enrolled.</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="icon-feature-box">
+                    <div class="icon-circle"><i class="ri-service-fill"></i></div>
+                    <h5>Full Support</h5>
+                    <p>We offer full support to all our students. Our aim is 100% satisfaction and we have maintained it successfully so far.</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="icon-feature-box">
+                    <div class="icon-circle"><i class="ri-user-voice-fill"></i></div>
+                    <h5>Free Counselling</h5>
+                    <p>Free counselling for everyone. If you have any queries relating to your study, we are happy to help.</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6">
+                <div class="icon-feature-box">
+                    <div class="icon-circle"><i class="ri-team-fill"></i></div>
+                    <h5>Excellent Team</h5>
+                    <p>An excellent team of experienced consultants across various fields, always ready to help you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- ================= FINAL CTA STRIP ================= -->
+<section class="pb-100">
+    <div class="cta-strip">
+        <h3>Ready to Start Your Journey?</h3>
+        <p>Register today and let Unnati Educational and Charitable Trust take care of your college fees.</p>
+        <a href="{% url 'registration' %}" class="btn v1"> <i class="ri-edit-2-fill"></i> Student Registration</a>
+        <a href="tel:+91 9117080900" class="btn v1"> <i class="ri-cellphone-fill"></i> Call Us Now</a>
+    </div>
+</section>
 
-
-
-
-
-        
+{% endblock %}
