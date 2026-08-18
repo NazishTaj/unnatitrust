@@ -2,16 +2,32 @@
 {% load static %}
 {% block content %}
 
-<section class="pt-100 pb-80" style="margin-top:90px;">
+<!-- ================= PAGE HEADER ================= -->
+<div class="page-header-banner">
+    <div class="container">
+        <span class="hero-tag">About Unnati</span>
+        <h1>About Us</h1>
+        <p class="breadcrumb-line"><a href="/">Home</a> <i class="ri-arrow-right-s-line"></i> About Us</p>
+    </div>
+</div>
+
+<!-- ================= CHAIRMAN / ABOUT ================= -->
+<section class="pt-100 pb-80">
     <div class="container">
 
         <div class="row align-items-center">
 
             <!-- Left Image -->
             <div class="col-lg-5 text-center mb-4 mb-lg-0">
-                <img src="{% static 'images/Samar2.jpg' %}" 
-                     alt="Chairman" 
-                     class="chairman-img">
+                <div class="chairman-frame">
+                    <img src="{% static 'images/Samar2.jpg' %}"
+                         alt="Chairman"
+                         class="chairman-img">
+                    <div class="chairman-caption">
+                        <strong>Samar Tanweer</strong>
+                        <span>Chairman</span>
+                    </div>
+                </div>
             </div>
 
             <!-- About Content -->
@@ -19,10 +35,10 @@
                 <div class="about-content">
                     <div class="section-title text-left style1">
                         <span>About us</span>
-                        <h2 style="color:#ba3256;">Unnati Educational and Charitable Trust</h2>
+                        <h2>Unnati Educational and Charitable Trust</h2>
 
                         <p align="justify">
-                            Unnati Educational and Charitable Trust is an organization dedicated to spreading the light of education and removing the darkness of ignorance from students’ lives. The trust works with the mission of guiding students away from uncertainty and towards a brighter and more secure future.
+                            Unnati Educational and Charitable Trust is an organization dedicated to spreading the light of education and removing the darkness of ignorance from students' lives. The trust works with the mission of guiding students away from uncertainty and towards a brighter and more secure future.
                         </p>
 
                         <p align="justify">
@@ -46,15 +62,15 @@
         <!-- Objective Section -->
         <div class="row mt-5">
             <div class="col-12">
-                <div class="about-subpara">
-                    <h2 style="color:#ba3256;">Our Objective</h2>
+                <div class="about-subpara objective-card">
+                    <h2>Our Objective</h2>
 
                     <p align="justify">
                         The primary objective of the Unnati Educational and Charitable Trust is to encourage financially weak and deserving students to pursue higher education. The trust supports such students by taking full responsibility for their college tuition fees.
                     </p>
 
                     <p align="justify">
-                        The trust aims to improve the country’s Gross Enrollment Ratio by helping needy students enroll in higher education. Students with at least 50% marks in Class 10 or 12 can apply.
+                        The trust aims to improve the country's Gross Enrollment Ratio by helping needy students enroll in higher education. Students with at least 50% marks in Class 10 or 12 can apply.
                     </p>
 
                     <p align="justify">
@@ -62,15 +78,17 @@
                     </p>
 
                     <!-- Highlight box -->
-                    <h4 style="color:#ba3256;"class="alert-heading">
-                        ⚠ Attention ! Students of India and Nepal
-                    </h4>
+                    <div class="attention-box">
+                        <div class="attention-icon"><i class="ri-error-warning-fill"></i></div>
+                        <div>
+                            <h4>Attention! Students of India and Nepal</h4>
+                            <p align="justify">
+                                Students from India and Nepal can apply for admission to the course of their choice in any state across India. The trust covers 100% of the tuition fees.
+                            </p>
+                        </div>
+                    </div>
 
-                    <p align="justify">
-                        Students from India and Nepal can apply for admission to the course of their choice in any state across India. The trust covers 100% of the tuition fees.
-                    </p>
-
-                    <p align="justify">
+                    <p align="justify" class="mt-4">
                         Students only need to pay for accommodation and examination charges, which are nominal.
                     </p>
 
@@ -92,137 +110,284 @@
 
     </div>
 </section>
-<!-- Mission & Vision -->
-<div class="row mt-5">
-    <div class="col-md-6 mb-4">
-        <div class="info-card text-center">
-            <h4>Our Mission</h4>
-            <p>
-                To ensure that no deserving student is deprived of higher education
-                due to financial constraints, and to build an educated and
-                self-reliant society.
-            </p>
-        </div>
-    </div>
 
-    <div class="col-md-6 mb-4">
-        <div class="info-card text-center">
-            <h4>Our Vision</h4>
-            <p>
-                To create an educated India where every student gets equal
-                opportunities to learn, grow, and succeed regardless of their
-                background.
-            </p>
-        </div>
-    </div>
-</div>
+<!-- ================= MISSION & VISION ================= -->
+<section class="pb-70" style="background:var(--uet-bg-soft); padding-top:20px;">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="icon-feature-box text-start" style="text-align:left;">
+                    <div class="icon-circle" style="margin:0 0 18px;"><i class="ri-flag-2-fill"></i></div>
+                    <h5>Our Mission</h5>
+                    <p>
+                        To ensure that no deserving student is deprived of higher education
+                        due to financial constraints, and to build an educated and
+                        self-reliant society.
+                    </p>
+                </div>
+            </div>
 
-<!-- What We Do -->
-<div class="row mt-4">
-    <div class="col-12">
-        <div class="info-card">
-            <h4>What We Do</h4>
-            <ul class="feature-list">
-                <li>100% tuition fee support for deserving students</li>
-                <li>Guidance for course and college selection</li>
-                <li>Direct admission assistance in government-approved institutions</li>
-                <li>Support for students from India and Nepal</li>
-                <li>Career counselling and academic guidance</li>
-            </ul>
+            <div class="col-md-6">
+                <div class="icon-feature-box text-start" style="text-align:left;">
+                    <div class="icon-circle" style="margin:0 0 18px;"><i class="ri-eye-fill"></i></div>
+                    <h5>Our Vision</h5>
+                    <p>
+                        To create an educated India where every student gets equal
+                        opportunities to learn, grow, and succeed regardless of their
+                        background.
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<!-- Impact Section -->
-<div class="row text-center mt-5">
-    <div class="col-md-3 col-6 mb-4">
-        <div class="impact-box">
-            <h2>3500+</h2>
-            <p>Seats Available</p>
+        <!-- What We Do -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="what-we-do-card">
+                    <div class="section-title text-left style1 mb-0">
+                        <span>Our Services</span>
+                        <h2>What We Do</h2>
+                    </div>
+                    <ul class="about-icon-list mt-3">
+                        <li>
+                            <div class="icon-badge"><i class="ri-money-rupee-circle-fill"></i></div>
+                            <div><strong>100% Tuition Fee Support</strong><span class="desc">Full college fee responsibility taken for deserving students.</span></div>
+                        </li>
+                        <li>
+                            <div class="icon-badge"><i class="ri-compass-3-fill"></i></div>
+                            <div><strong>Course & College Guidance</strong><span class="desc">Personalised guidance for choosing the right course and college.</span></div>
+                        </li>
+                        <li>
+                            <div class="icon-badge"><i class="ri-file-list-3-fill"></i></div>
+                            <div><strong>Direct Admission Assistance</strong><span class="desc">Hands-on help with admission into government-approved institutions.</span></div>
+                        </li>
+                        <li>
+                            <div class="icon-badge"><i class="ri-earth-fill"></i></div>
+                            <div><strong>Support for India & Nepal</strong><span class="desc">Open to students applying from across India and Nepal.</span></div>
+                        </li>
+                        <li>
+                            <div class="icon-badge"><i class="ri-user-voice-fill"></i></div>
+                            <div><strong>Career Counselling</strong><span class="desc">Ongoing academic guidance and career counselling.</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
+</section>
 
-    <div class="col-md-3 col-6 mb-4">
-        <div class="impact-box">
-            <h2>10+</h2>
-            <p>States Covered</p>
+<!-- ================= IMPACT ================= -->
+<section class="pb-100">
+    <div class="container">
+        <div class="section-title style1 text-center mb-40">
+            <span>Our Reach</span>
+            <h2>Our Impact</h2>
         </div>
-    </div>
+        <div class="row text-center g-4">
+            <div class="col-md-3 col-6">
+                <div class="impact-stat-box">
+                    <i class="ri-armchair-fill"></i>
+                    <h2>3500+</h2>
+                    <p>Seats Available</p>
+                </div>
+            </div>
 
-    <div class="col-md-3 col-6 mb-4">
-        <div class="impact-box">
-            <h2>50+</h2>
-            <p>Partner Colleges</p>
-        </div>
-    </div>
+            <div class="col-md-3 col-6">
+                <div class="impact-stat-box">
+                    <i class="ri-map-pin-2-fill"></i>
+                    <h2>10+</h2>
+                    <p>States Covered</p>
+                </div>
+            </div>
 
-    <div class="col-md-3 col-6 mb-4">
-        <div class="impact-box">
-            <h2>1000+</h2>
-            <p>Students Supported</p>
+            <div class="col-md-3 col-6">
+                <div class="impact-stat-box">
+                    <i class="ri-building-4-fill"></i>
+                    <h2>50+</h2>
+                    <p>Partner Colleges</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="impact-stat-box">
+                    <i class="ri-team-fill"></i>
+                    <h2>1000+</h2>
+                    <p>Students Supported</p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
 <style>
-    .info-card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    height: 100%;
-}
+    /* ---------- PAGE HEADER BANNER ---------- */
+    .page-header-banner {
+        background: linear-gradient(120deg, var(--uet-navy-dark) 0%, var(--uet-navy) 60%, var(--uet-navy-mid) 100%);
+        padding: 70px 0 40px;
+        text-align: center;
+    }
 
-.info-card h4 {
-    color: #ba3256;
-    margin-bottom: 15px;
-}
+    .page-header-banner .hero-tag {
+        display: inline-block;
+        background: var(--uet-gold);
+        color: var(--uet-navy-dark);
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        border-radius: 20px;
+        margin-bottom: 14px;
+    }
 
-.feature-list {
-    list-style: none;
-    padding: 0;
-}
+    .page-header-banner h1 {
+        color: #fff;
+        font-family: 'PT Serif', serif;
+        font-weight: 700;
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
 
-.feature-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-}
+    .page-header-banner .breadcrumb-line {
+        color: #cfd8e3;
+        font-size: 13.5px;
+        margin-bottom: 0;
+    }
 
-.feature-list li:last-child {
-    border-bottom: none;
-}
+    .page-header-banner .breadcrumb-line a {
+        color: var(--uet-gold-light);
+        text-decoration: none;
+    }
 
-.impact-box {
-    background: #f8f9fa;
-    padding: 25px 10px;
-    border-radius: 10px;
-}
+    /* ---------- CHAIRMAN PORTRAIT ---------- */
+    .chairman-frame {
+        display: inline-block;
+        position: relative;
+        padding: 10px;
+        background: linear-gradient(135deg, var(--uet-gold) 0%, var(--uet-gold-dark) 100%);
+        border-radius: 16px;
+        box-shadow: 0 20px 45px rgba(15, 42, 74, 0.18);
+    }
 
-.impact-box h2 {
-    color: #ba3256;
-    font-weight: 700;
-}
+    .chairman-img {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        border-radius: 10px;
+        display: block;
+    }
 
-.chairman-img {
-    width: 100%;
-    max-width: 380px;
-    height: auto;
-    border-radius: 12px;
-}
+    .chairman-caption {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        background: rgba(8, 26, 48, 0.85);
+        border-radius: 8px;
+        padding: 10px 14px;
+        text-align: left;
+    }
 
-/* Highlight box */
-.alert-heading {
-    font-size: 22px;
-    background-color: #fff3cd;
-    color: #856404;
-    padding: 12px 18px;
-    border-left: 6px solid #ffc107;
-    border-radius: 5px;
-    display: inline-block;
-    font-weight: 600;
-    margin-top: 20px;
-    
-}
+    .chairman-caption strong {
+        display: block;
+        color: #fff;
+        font-size: 15px;
+    }
+
+    .chairman-caption span {
+        color: var(--uet-gold-light);
+        font-size: 12.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* ---------- OBJECTIVE / ATTENTION BOX ---------- */
+    .objective-card h2 {
+        color: var(--uet-navy);
+        font-family: 'PT Serif', serif;
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+
+    .attention-box {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        background: #fff8ea;
+        border: 1px solid var(--uet-gold);
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin-top: 22px;
+    }
+
+    .attention-icon {
+        flex-shrink: 0;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: var(--uet-gold);
+        color: var(--uet-navy-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .attention-box h4 {
+        color: var(--uet-navy);
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .attention-box p {
+        color: var(--uet-text);
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    /* ---------- WHAT WE DO CARD ---------- */
+    .what-we-do-card {
+        background: var(--uet-white);
+        border-radius: 14px;
+        padding: 34px 30px;
+        box-shadow: 0 6px 20px rgba(15, 42, 74, 0.07);
+    }
+
+    /* ---------- IMPACT STATS ---------- */
+    .impact-stat-box {
+        background: linear-gradient(135deg, var(--uet-navy) 0%, var(--uet-navy-mid) 100%);
+        border-radius: 14px;
+        padding: 34px 16px;
+        height: 100%;
+        box-shadow: 0 10px 26px rgba(15, 42, 74, 0.18);
+        transition: transform 0.3s ease;
+    }
+
+    .impact-stat-box:hover {
+        transform: translateY(-6px);
+    }
+
+    .impact-stat-box i {
+        font-size: 28px;
+        color: var(--uet-gold);
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    .impact-stat-box h2 {
+        color: #fff;
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: 4px;
+    }
+
+    .impact-stat-box p {
+        color: #cfd8e3;
+        font-size: 13.5px;
+        margin-bottom: 0;
+    }
 </style>
 
 {% endblock %}
