@@ -1,457 +1,662 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content%}
-    <style>
-        .form-control {
-            display: block;
-            width: 100%;
-            padding: 0.975rem 0.75rem;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            background-color: #f4f4f4;
-            background-clip: padding-box;
-            border: 1px solid #ced4da;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            border-radius: 0.25rem;
-            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-        }
-    </style>
-    <style>
-        .form-control {
-            display: block;
-            width: 100%;
-            height: 58px !important;
-            padding: 6px 12px;
-            font-size: 14px;
-            line-height: 1.42857143;
-            color: #555;
-            background-color: #f1f1f1 !important;
-            background-image: none;
-            border: 0;
-            border-radius: 4px;
-            -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
-            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
-            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-        }
-    </style>
+<style>
+    /* ============================================================
+       ADMISSION REGISTRATION FORM — REDESIGN
+       Palette : Navy #0B2545 / Ink #13315C / Gold #C9A227 / Canvas #F7F6F2
+       Type    : Poppins (headings) + Inter (body/labels)
+       ============================================================ */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
 
+    :root{
+        --rf-navy:#0B2545;
+        --rf-navy-2:#13315C;
+        --rf-gold:#C9A227;
+        --rf-gold-light:#E8C766;
+        --rf-canvas:#F7F6F2;
+        --rf-white:#FFFFFF;
+        --rf-ink:#1F2937;
+        --rf-muted:#6B7280;
+        --rf-border:#E3DFD3;
+        --rf-danger:#B3261E;
+    }
 
-        <section class="breadcrumb-wrap bg-f br-bg-1"
-         style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7'); 
-                background-size: cover; 
-                background-position: center;">
-    
-    <div class="overlay op-6 bg-black"></div>
+    /* ---------- HERO ---------- */
+    .reg-hero{
+        position:relative;
+        background:
+            linear-gradient(135deg, rgba(11,37,69,.92) 0%, rgba(19,49,92,.85) 55%, rgba(201,162,39,.35) 100%),
+            url('https://images.unsplash.com/photo-1509062522246-3755977927d7');
+        background-size:cover;
+        background-position:center;
+        padding:90px 20px 70px;
+        text-align:center;
+        overflow:hidden;
+    }
+    .reg-hero .overlay{ display:none; }
+    .reg-hero-eyebrow{
+        font-family:'Inter',sans-serif;
+        font-size:12px;
+        letter-spacing:3px;
+        text-transform:uppercase;
+        color:var(--rf-gold-light);
+        margin-bottom:14px;
+        font-weight:600;
+    }
+    .reg-hero h2{
+        font-family:'Poppins',sans-serif;
+        font-weight:800;
+        font-size:38px;
+        color:#fff;
+        margin:0 0 16px;
+        letter-spacing:.3px;
+    }
+    .reg-hero-sub{
+        font-family:'Inter',sans-serif;
+        color:rgba(255,255,255,.82);
+        font-size:15.5px;
+        max-width:560px;
+        margin:0 auto;
+        line-height:1.6;
+    }
+    .reg-hero-rule{
+        width:64px;height:3px;background:var(--rf-gold);
+        margin:20px auto 0;border-radius:2px;
+    }
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-10 offset-md-1">
-                <div class="breadcrumb-title text-center">
-                    <h2 style="color: #fff;">Online Registration Form</h2>
+    /* ---------- PAGE WRAP ---------- */
+    .reg-wrap{ background:var(--rf-canvas); padding:60px 0 90px; }
+    .reg-card{
+        background:var(--rf-white);
+        border-radius:14px;
+        box-shadow:0 20px 50px -20px rgba(11,37,69,.25);
+        border:1px solid var(--rf-border);
+        padding:48px 44px 40px;
+        max-width:980px;
+        margin:0 auto;
+    }
+    .reg-card > hr{ display:none; }
+
+    /* ---------- SECTION SPINE (signature element) ---------- */
+    .reg-form-shell{ position:relative; padding-left:64px; }
+    .reg-form-shell::before{
+        content:"";
+        position:absolute;
+        left:21px; top:6px; bottom:6px;
+        width:2px;
+        background:repeating-linear-gradient(to bottom, var(--rf-gold) 0 6px, transparent 6px 12px);
+        opacity:.55;
+    }
+    .reg-section{ position:relative; margin-bottom:34px; }
+    .reg-section-head{ display:flex; align-items:center; gap:16px; margin-bottom:6px; }
+    .reg-marker{
+        position:absolute; left:-64px; top:-2px;
+        width:44px; height:44px; border-radius:50%;
+        background:var(--rf-navy);
+        color:var(--rf-gold-light);
+        font-family:'Poppins',sans-serif; font-weight:700; font-size:15px;
+        display:flex; align-items:center; justify-content:center;
+        box-shadow:0 6px 14px -4px rgba(11,37,69,.5);
+        border:2px solid var(--rf-gold);
+        z-index:2;
+    }
+    .reg-section h3{
+        font-family:'Poppins',sans-serif;
+        font-weight:700; font-size:20px;
+        color:var(--rf-navy);
+        margin:0;
+    }
+    .reg-section-tag{
+        font-family:'Inter',sans-serif;
+        font-size:11px; letter-spacing:2px; text-transform:uppercase;
+        color:var(--rf-muted); display:block; margin-bottom:2px;
+    }
+    .reg-divider{
+        height:1px;
+        background:linear-gradient(to right, var(--rf-border), transparent);
+        margin:6px 0 24px;
+    }
+
+    /* ---------- FIELDS ---------- */
+    .reg-card .form-group{ margin-bottom:20px; }
+    .reg-card label{
+        font-family:'Inter',sans-serif;
+        font-weight:600; font-size:13px;
+        color:var(--rf-navy-2);
+        margin-bottom:7px; display:block;
+    }
+    .reg-card input[type="text"],
+    .reg-card input[type="email"],
+    .reg-card input[type="tel"],
+    .reg-card select.form-control,
+    .reg-card .form-control{
+        width:100%;
+        height:50px !important;
+        padding:0 16px;
+        font-family:'Inter',sans-serif;
+        font-size:14.5px;
+        color:var(--rf-ink);
+        background-color:#FAFAF8 !important;
+        border:1.5px solid var(--rf-border) !important;
+        border-radius:8px !important;
+        box-shadow:none !important;
+        transition:border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+    }
+    .reg-card input::placeholder{ color:#9AA1AC; font-weight:400; }
+    .reg-card input:focus,
+    .reg-card select:focus{
+        outline:none;
+        border-color:var(--rf-gold) !important;
+        background-color:#fff !important;
+        box-shadow:0 0 0 4px rgba(201,162,39,.14) !important;
+    }
+    .reg-card select.form-control,
+    .reg-card select#coursesub{
+        appearance:none; -webkit-appearance:none; -moz-appearance:none;
+        background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%230B2545' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+        background-repeat:no-repeat;
+        background-position:right 16px center;
+        padding-right:40px;
+    }
+    .reg-card .input-group.date{ position:relative; }
+    .reg-card .input-group.date .input-group-addon{
+        position:absolute; right:16px; top:50%; transform:translateY(-50%);
+        color:var(--rf-gold); pointer-events:none;
+    }
+    .reg-card .input-group.date input{ padding-right:44px; }
+
+    /* ---------- DECLARATIONS ---------- */
+    .reg-declare-box{
+        background:#FBF8EF;
+        border:1px solid #EADFB4;
+        border-left:4px solid var(--rf-gold);
+        border-radius:8px;
+        padding:20px 22px;
+        margin-bottom:16px;
+    }
+    .reg-declare-box strong{
+        font-family:'Poppins',sans-serif;
+        color:var(--rf-navy);
+        font-size:14.5px;
+        display:block;
+        margin-bottom:10px;
+    }
+    .reg-declare-box label{
+        font-family:'Inter',sans-serif;
+        font-weight:400;
+        font-size:13.5px;
+        color:var(--rf-ink);
+        line-height:1.75;
+        display:flex; gap:10px; align-items:flex-start;
+        margin:0;
+    }
+    .reg-declare-box input[type="checkbox"]{
+        margin-top:4px; width:16px; height:16px; accent-color:var(--rf-navy); flex-shrink:0;
+    }
+
+    .reg-terms-row{
+        display:flex; align-items:center; gap:10px;
+        font-family:'Inter',sans-serif; font-size:13.5px;
+        margin:6px 0 30px;
+    }
+    .reg-terms-row input{ width:16px; height:16px; accent-color:var(--rf-navy); }
+    .reg-terms-row a{ color:var(--rf-navy); font-weight:600; text-decoration:underline; }
+
+    /* ---------- PAYMENT ---------- */
+    .reg-payment-card{
+        background:var(--rf-navy);
+        background:linear-gradient(160deg, var(--rf-navy) 0%, var(--rf-navy-2) 100%);
+        border-radius:12px;
+        padding:34px 20px;
+        text-align:center;
+        margin:6px 0 34px;
+    }
+    .reg-payment-card h4{
+        font-family:'Poppins',sans-serif; font-weight:700; color:#fff;
+        font-size:19px; margin:0 0 4px;
+    }
+    .reg-payment-card h4 span{ color:var(--rf-gold-light); }
+    .reg-payment-card p{ font-family:'Inter',sans-serif; color:rgba(255,255,255,.75); font-size:13.5px; margin:0 0 20px; }
+    .reg-payment-card img{
+        width:220px; height:220px; object-fit:cover;
+        border:6px solid #fff; border-radius:12px;
+        box-shadow:0 14px 30px -10px rgba(0,0,0,.5);
+    }
+
+    /* ---------- SUBMIT ---------- */
+    .reg-submit-wrap{ text-align:center; margin-top:8px; }
+    .reg-card .btn.v3{
+        font-family:'Poppins',sans-serif;
+        font-weight:600; font-size:15px; letter-spacing:.4px;
+        background:linear-gradient(135deg, var(--rf-navy) 0%, var(--rf-navy-2) 100%);
+        color:#fff !important;
+        border:none;
+        padding:15px 56px;
+        border-radius:8px;
+        box-shadow:0 12px 24px -8px rgba(11,37,69,.45);
+        transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .reg-card .btn.v3:hover{
+        transform:translateY(-2px);
+        box-shadow:0 16px 30px -8px rgba(11,37,69,.55);
+        background:linear-gradient(135deg, var(--rf-navy-2) 0%, var(--rf-navy) 100%);
+    }
+
+    @media (max-width:767px){
+        .reg-hero{ padding:60px 18px 46px; }
+        .reg-hero h2{ font-size:28px; }
+        .reg-card{ padding:32px 20px 28px; border-radius:10px; }
+        .reg-form-shell{ padding-left:48px; }
+        .reg-marker{ left:-48px; width:36px; height:36px; font-size:13px; }
+        .reg-form-shell::before{ left:17px; }
+    }
+</style>
+
+    <section class="breadcrumb-wrap reg-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-10 offset-md-1">
+                    <div class="reg-hero-eyebrow">Admissions 2026</div>
+                    <div class="breadcrumb-title text-center">
+                        <h2>Online Registration Form</h2>
+                    </div>
+                    <p class="reg-hero-sub">Fill in your details below to begin your admission journey. All fields marked with * are required.</p>
+                    <div class="reg-hero-rule"></div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <section class="Login-wrap reg-wrap">
+        <div class="container">
+            <div class="reg-card">
 
-        <section class="Login-wrap pt-50 pb-100">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="section-title style1 text-center mb-40">
-                          
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-xl-12 col-lg-12">
-                        <hr>
+                <form name="myform" action="{% url 'register' %}" method="post" enctype="multipart/form-data" onsubmit="return validateform()">
+                {% csrf_token %}
 
-                        <div class="row">
-                            <div class="col-lg-12">
+                <div class="reg-form-shell">
+
+                    <!-- SECTION 01 -->
+                    <div class="reg-section">
+                        <div class="reg-marker">01</div>
+                        <div class="reg-section-head">
+                            <div>
+                                <span class="reg-section-tag">Section 01</span>
                                 <h3>Student Details</h3>
                             </div>
                         </div>
+                        <div class="reg-divider"></div>
 
-
-                        <form name="myform" action="{% url 'register' %}" method="post" enctype="multipart/form-data" onsubmit="return validateform()">
-                        {% csrf_token %}
-
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="First_Name">First Name*</label>
-                                        <input type="text" name="First_Name" id="First_Name" placeholder="Enter First Name">
-                                    </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="First_Name">First Name*</label>
+                                    <input type="text" name="First_Name" id="First_Name" placeholder="Enter First Name">
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="Last_Name">Last Name*</label>
-                                        <input type="text" name="Last_Name" id="Last_Name" placeholder="Enter Last Name">
-                                    </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="Last_Name">Last Name*</label>
+                                    <input type="text" name="Last_Name" id="Last_Name" placeholder="Enter Last Name">
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="email">Email Address*</label>
-                                        <input type="email" name="email" id="email" placeholder="Enter Email Address">
-                                    </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="email">Email Address*</label>
+                                    <input type="email" name="email" id="email" placeholder="Enter Email Address">
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="phone">Phone Number*</label>
-                                        <input type="text" name="phone" id="phone"
-       placeholder="Enter Phone Number"
-       maxlength="10"
-       pattern="[0-9]{10}"
-       required>
-
-                                    </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number*</label>
+                                    <input type="text" name="phone" id="phone"
+                                        placeholder="Enter Phone Number"
+                                        maxlength="10"
+                                        pattern="[0-9]{10}"
+                                        required>
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="phone">Gender*</label>
-                                    <div class="form-group">
-                                        <select class="form-control js-example-tags" id="service" name="gender">
-  <option value="">Select Gender*</option>
-  <option value="male"> Male</option>
-  <option value="female"> Female</option>
-</select>
-                                    </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="gender_select">Gender*</label>
+                                    <select class="form-control js-example-tags" id="gender_select" name="gender">
+                                        <option value="">Select Gender*</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="education">Education*</label>
-                                    <div class="form-group">
-                                        <select class="form-control js-example-tags" id="service" name="education">
-  <option value="">Select Education*</option>
-  <option value="10">  10</option>
-  <option value="inter"> 10+ 2</option>
-  <option value="Graduation or Btech"> Graduation/B.tech</option>
-  <option value="Others"> Others</option>
-</select>
-                                    </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="education_select">Education*</label>
+                                    <select class="form-control js-example-tags" id="education_select" name="education">
+                                        <option value="">Select Education*</option>
+                                        <option value="10">10</option>
+                                        <option value="inter">10+2</option>
+                                        <option value="Graduation or Btech">Graduation/B.tech</option>
+                                        <option value="Others">Others</option>
+                                    </select>
                                 </div>
-                                <div class="col-lg-4">
-                                    <label for="phone">Category*</label>
-                                    <div class="form-group">
-                                        <select class="form-control js-example-tags" id="service" name="category">
-  <option value="">Select Category*</option>
-  <option value="OBC">  OBC</option>
-  <option value="General">General</option>
-  <option value="Minority"> Minority</option>
-  <option value="Others"> Others</option>
-</select>
-                                    </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="category_select">Category*</label>
+                                    <select class="form-control js-example-tags" id="category_select" name="category">
+                                        <option value="">Select Category*</option>
+                                        <option value="OBC">OBC</option>
+                                        <option value="General">General</option>
+                                        <option value="Minority">Minority</option>
+                                        <option value="Others">Others</option>
+                                    </select>
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="country">Nationality*</label>
-                                        <input type="text" name="country" id="country" placeholder="Indian">
-                                    </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="country">Nationality*</label>
+                                    <input type="text" name="country" id="country" placeholder="Indian">
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="street">Date Of Birth (dd-mm-yyyy)</label>
-                                        <div id="" class="input-group date" data-date-format="dd-mm-yyyy">
-                                            <input class="form-control" name="dob" type="text" />
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                        </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="dob_input">Date Of Birth (dd-mm-yyyy)</label>
+                                    <div class="input-group date" data-date-format="dd-mm-yyyy">
+                                        <input class="form-control" id="dob_input" name="dob" type="text" placeholder="dd-mm-yyyy" />
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <h3>Parent Details</h3>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="fname">Father's Name*</label>
-                                        <input type="text" name="father" placeholder="Enter Father Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="lname">Mother's Name*</label>
-                                        <input type="text" name="mother" placeholder="Enter Mother Name">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="fphone">Father's Phone Number*</label>
-                                         <input type="text" name="fphone" id="fphone" placeholder="Enter Phone Number" maxlength="10"pattern="[0-9]{10}"required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="mphone">Mother's Phone Number</label>
-                                          <input type="text" name="mphone" id="mphone"
-       placeholder="Enter Phone Number"
-       maxlength="10"
-       pattern="[0-9]{10}"
-       required>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="lname">Parent Occupation</label>
-                                        <input type="text" name="occupation" placeholder="Parent Occupation">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="form-group">
-                                        <label for="lname">Annual Income</label>
-                                        <input type="text" name="income" placeholder="Annual Income">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="street">Address</label>
-                                        <input type="text" name="address" id="street" placeholder="Address">
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="street">State</label>
-                                        <select type="text" class="form-control js-example-tags" name="state" id="State" placeholder="State">	
-			<option value="Andaman and Nicobar Island (UT)">Andaman and Nicobar Island (UT)</option>
-<option value="Andhra Pradesh">Andhra Pradesh</option>
-<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-<option value="Assam">Assam</option>
-<option value="Bihar">Bihar</option>
-<option value="Chandigarh (UT)">Chandigarh (UT)</option>
-<option value="Chhattisgarh">Chhattisgarh</option>
-<option value="Dadra and Nagar Haveli (UT)">Dadra and Nagar Haveli (UT)</option>
-<option value="Daman and Diu (UT)">Daman and Diu (UT)</option>
-<option value="Delhi (NCT)">Delhi (NCT)</option>
-<option value="Goa">Goa</option>
-<option value="Gujarat">Gujarat</option>
-<option value="Haryana">Haryana</option>
-<option value="Himachal Pradesh">Himachal Pradesh</option>
-<option value="Jammu and Kashmir">Jammu and Kashmir</option>
-<option value="Jharkhand">Jharkhand</option>
-<option value="Karnataka">Karnataka</option>
-<option value="Kerala">Kerala</option>
-<option value="Lakshadweep (UT)">Lakshadweep (UT)</option>
-<option value="Madhya Pradesh">Madhya Pradesh</option>
-<option value="Maharashtra">Maharashtra</option>
-<option value="Manipur">Manipur</option>
-<option value="Meghalaya">Meghalaya</option>
-<option value="Mizoram">Mizoram</option>
-<option value="Nagaland">Nagaland</option>
-<option value="Odisha">Odisha</option>
-<option value="Puducherry (UT)">Puducherry (UT)</option>
-<option value="Punjab">Punjab</option>
-<option value="Rajasthan">Rajasthan</option>
-<option value="Sikkim">Sikkim</option>
-<option value="Tamil Nadu">Tamil Nadu</option>
-<option value="Telangana">Telangana</option>
-<option value="Tripura">Tripura</option>
-<option value="Uttarakhand">Uttarakhand</option>
-<option value="Uttar Pradesh">Uttar Pradesh</option>
-<option value="West Bengal">West Bengal</option>
-
-	</select>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <label for="phone">Select Program*</label>
-                                    <div class="form-group">
-                                        <select class="form-control js-example-tags" id="courseid" name="program">
-    <option value="">Select Program</option>
-                   <option value="Technical Program">Technical Program</option>
-                                    <option value="Para-Medical">Para-Medical</option>
-                                    <option value="Management Program">Management Program</option>
-                                    <option value="Others">Others </option>
-                    
-</select>
-</div>
-</div>
-                                <div class="col-lg-6">
-                                    <label for="phone">Select Course*</label>
-                                    <div class="form-group">
-                                        <select class="form-control" id="coursesub" name="course">
-    <option value="">Select Course*</option>
-
-    <optgroup label="Engineering">
-        <option value="Aeronautics Engineering">Aeronautics Engineering</option>
-        <option value="Automobile Engineering">Automobile Engineering</option>
-        <option value="Biomedical Engineering">Biomedical Engineering</option>
-        <option value="Biotechnology Engineering">Biotechnology Engineering</option>
-        <option value="Chemical Engineering">Chemical Engineering</option>
-        <option value="Civil Engineering">Civil Engineering</option>
-        <option value="Computer Science Engineering">Computer Science Engineering</option>
-        <option value="Electrical & Electronics Engineering">Electrical & Electronics Engineering</option>
-        <option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
-        <option value="Mechanical Engineering">Mechanical Engineering</option>
-        <option value="Mechatronics Engineering">Mechatronics Engineering</option>
-        <option value="M.Tech (All Branches)">M.Tech (All Branches)</option>
-    </optgroup>
-
-    <optgroup label="IT & Programming">
-        <option value="BCA">BCA</option>
-        <option value="MCA">MCA</option>
-        <option value="MSc Software Systems">MSc Software Systems</option>
-        <option value="Diploma in Software Engineering">Diploma in Software Engineering</option>
-        <option value="Python Courses">Python Courses</option>
-        <option value="Java Courses">Java Courses</option>
-        <option value="BTech Software Engineering">BTech Software Engineering</option>
-        <option value="MTech Software Engineering">MTech Software Engineering</option>
-    </optgroup>
-
-    <optgroup label="Medical & Paramedical">
-        <option value="DMLT">DMLT</option>
-        <option value="B.Sc. Nursing">B.Sc. Nursing</option>
-        <option value="B.Sc. MLT">B.Sc. MLT</option>
-        <option value="B.Sc. Radiology">B.Sc. Radiology</option>
-        <option value="B.Sc. Anaesthesia Technology">B.Sc. Anaesthesia Technology</option>
-        <option value="B.Sc. Operation Theater Technology">B.Sc. Operation Theater Technology</option>
-        <option value="Physiotherapy">Physiotherapy</option>
-        <option value="B. Pharmacy">B. Pharmacy</option>
-        <option value="D. Pharmacy">D. Pharmacy</option>
-        <option value="Diploma Radiology">Diploma Radiology</option>
-        <option value="B.D.S">B.D.S</option>
-        <option value="B.A.M.S">B.A.M.S</option>
-        <option value="B.H.M.S">B.H.M.S</option>
-        <option value="B.U.M.S">B.U.M.S</option>
-    </optgroup>
-
-    <optgroup label="Management & Commerce">
-        <option value="B.Com">B.Com</option>
-        <option value="BBM">BBM</option>
-        <option value="BBA">BBA</option>
-        <option value="MBA">MBA</option>
-        <option value="MBA Integrated">MBA Integrated</option>
-        <option value="PGDM">PGDM</option>
-        <option value="BHM (Hotel Management)">BHM (Hotel Management)</option>
-        <option value="M.Com">M.Com</option>
-    </optgroup>
-
-    <optgroup label="Education & Law">
-        <option value="LLB">LLB</option>
-        <option value="Integrated LLB (5 Years)">Integrated LLB (5 Years)</option>
-        <option value="B.Ed">B.Ed</option>
-        <option value="D.Ed">D.Ed</option>
-        <option value="B.P.Ed">B.P.Ed</option>
-        <option value="D.P.Ed">D.P.Ed</option>
-    </optgroup>
-
-    <optgroup label="Agriculture & Other">
-        <option value="B.Sc. Agriculture">B.Sc. Agriculture</option>
-        <option value="Diploma in Agriculture">Diploma in Agriculture</option>
-        <option value="Fashion Designing">Fashion Designing</option>
-    </optgroup>
-
-</select>
- 
-  
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label for="street">Coordinator Reference No. </label>
-                                        <input type="text" name="reference" placeholder="If Not Leave Blank">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="checkbox mb-10" style="padding-left: 22px;">
-                                  
-                                         <label>
-      
-        <strong>Declaration:</strong><br><br>
-        <input type="checkbox" name="declaration_main" required>
-        मुझे यह जानकारी है कि प्रवेश (Admission) के बाद रहने-खाने (हॉस्टल-फी) तथा परीक्षा शुल्क मुझे स्वयं अदा करने होंगे। 
-        नामांकन प्रक्रिया पूर्ण होने के बाद, कोर्स की पूरी अवधि तक मुझे कॉलेज परिसर/हॉस्टल में रहकर कॉलेज के नियमों एवं अनुशासन का पालन करते हुए कोर्स पूर्ण करना होगा।<br><br>
-
-        I am aware that after the admission and enrollment process, I will have to pay the hostel fee (food and accommodation) and examination fee by myself. 
-        I also agree that after completing the enrollment process, I must stay in the college hostel premises and follow all the rules and discipline of the institution until the course is completed.
-    </label>
-
-    <br><br>
-
-    <!-- Checkbox 2 -->
-    <label>
-        
-        <strong>Registration Fee Declaration:</strong><br><br>
-<input type="checkbox" name="declaration_fee" required>
-        I understand that a registration fee of ₹1000 must be paid at the time of registration, which is mandatory and non-refundable.
-    </label>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-3">
-                                <div class="checkbox mb-10" style="padding-left: 22px;">
-                                    <input type="checkbox" id="ts">
-                                    <label for="ts">I Agree All Terms & Conditions</label><br>
-                                    <a class="pull-right" href="/privacypolicy" style="padding-right:30px;" target="_blank">Learn More</a>
-                                </div>
-                            </div>
-
-                            <!--<div class="form-group">-->
-                            <!--                                        <div class="g-recaptcha" data-sitekey="6LehDhQhAAAAACPDlvLqXG6TRLZklMcBV0YFjF6h-->
-                            <!--"></div>-->
-                            <!--                                    </div>-->
-
-
-							<!-- 🔥 PAYMENT SECTION START -->
-<div class="row">
-    <div class="col-lg-12 text-center mb-4">
-        <h4>Registration Fee: ₹1000</h4>
-        <p>Scan the QR Code to make payment</p>
-
-        <img src="{% static 'images/payment_qr.jpeg' %}" 
-             alt="QR Code" 
-             style="width:350px; height:350px; border:2px solid #ddd; padding:10px; border-radius:10px;">
-
-      <!--  <p class="mt-2">After payment, upload screenshot and click Submit</p>
-
-        <p style="color:red; font-weight:bold;">
-            * Payment is mandatory. Without payment form will be rejected.
-        </p>  -->
-    </div>  
-
-    <!-- Screenshot Upload 
-    <div class="col-lg-12">
-        <div class="form-group">
-            <label>Upload Payment Screenshot*</label>
-            <input type="file" name="payment_proof" required>
-        </div>
-    </div>
-</div> -->
-<!-- 🔥 PAYMENT SECTION END -->
-                            <div class="col-lg-12 mt-3 text-center">
-                                <button type="submit" class="btn v3">Submit</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
 
-                </div>
-            </div>
-    </div>
+                    <!-- SECTION 02 -->
+                    <div class="reg-section">
+                        <div class="reg-marker">02</div>
+                        <div class="reg-section-head">
+                            <div>
+                                <span class="reg-section-tag">Section 02</span>
+                                <h3>Parent Details</h3>
+                            </div>
+                        </div>
+                        <div class="reg-divider"></div>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="father">Father's Name*</label>
+                                    <input type="text" name="father" id="father" placeholder="Enter Father Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="mother">Mother's Name*</label>
+                                    <input type="text" name="mother" id="mother" placeholder="Enter Mother Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="fphone">Father's Phone Number*</label>
+                                    <input type="text" name="fphone" id="fphone" placeholder="Enter Phone Number" maxlength="10" pattern="[0-9]{10}" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="mphone">Mother's Phone Number</label>
+                                    <input type="text" name="mphone" id="mphone"
+                                        placeholder="Enter Phone Number"
+                                        maxlength="10"
+                                        pattern="[0-9]{10}"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="occupation">Parent Occupation</label>
+                                    <input type="text" name="occupation" id="occupation" placeholder="Parent Occupation">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="income">Annual Income</label>
+                                    <input type="text" name="income" id="income" placeholder="Annual Income">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="street">Address</label>
+                                    <input type="text" name="address" id="street" placeholder="Address">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="State">State</label>
+                                    <select class="form-control js-example-tags" name="state" id="State">
+                                        <option value="Andaman and Nicobar Island (UT)">Andaman and Nicobar Island (UT)</option>
+                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chandigarh (UT)">Chandigarh (UT)</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Dadra and Nagar Haveli (UT)">Dadra and Nagar Haveli (UT)</option>
+                                        <option value="Daman and Diu (UT)">Daman and Diu (UT)</option>
+                                        <option value="Delhi (NCT)">Delhi (NCT)</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Lakshadweep (UT)">Lakshadweep (UT)</option>
+                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Odisha">Odisha</option>
+                                        <option value="Puducherry (UT)">Puducherry (UT)</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttarakhand">Uttarakhand</option>
+                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                        <option value="West Bengal">West Bengal</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 03 -->
+                    <div class="reg-section">
+                        <div class="reg-marker">03</div>
+                        <div class="reg-section-head">
+                            <div>
+                                <span class="reg-section-tag">Section 03</span>
+                                <h3>Program &amp; Course</h3>
+                            </div>
+                        </div>
+                        <div class="reg-divider"></div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="courseid">Select Program*</label>
+                                    <select class="form-control js-example-tags" id="courseid" name="program">
+                                        <option value="">Select Program</option>
+                                        <option value="Technical Program">Technical Program</option>
+                                        <option value="Para-Medical">Para-Medical</option>
+                                        <option value="Management Program">Management Program</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="coursesub">Select Course*</label>
+                                    <select class="form-control" id="coursesub" name="course">
+                                        <option value="">Select Course*</option>
+
+                                        <optgroup label="Engineering">
+                                            <option value="Aeronautics Engineering">Aeronautics Engineering</option>
+                                            <option value="Automobile Engineering">Automobile Engineering</option>
+                                            <option value="Biomedical Engineering">Biomedical Engineering</option>
+                                            <option value="Biotechnology Engineering">Biotechnology Engineering</option>
+                                            <option value="Chemical Engineering">Chemical Engineering</option>
+                                            <option value="Civil Engineering">Civil Engineering</option>
+                                            <option value="Computer Science Engineering">Computer Science Engineering</option>
+                                            <option value="Electrical & Electronics Engineering">Electrical & Electronics Engineering</option>
+                                            <option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+                                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                            <option value="Mechatronics Engineering">Mechatronics Engineering</option>
+                                            <option value="M.Tech (All Branches)">M.Tech (All Branches)</option>
+                                        </optgroup>
+
+                                        <optgroup label="IT & Programming">
+                                            <option value="BCA">BCA</option>
+                                            <option value="MCA">MCA</option>
+                                            <option value="MSc Software Systems">MSc Software Systems</option>
+                                            <option value="Diploma in Software Engineering">Diploma in Software Engineering</option>
+                                            <option value="Python Courses">Python Courses</option>
+                                            <option value="Java Courses">Java Courses</option>
+                                            <option value="BTech Software Engineering">BTech Software Engineering</option>
+                                            <option value="MTech Software Engineering">MTech Software Engineering</option>
+                                        </optgroup>
+
+                                        <optgroup label="Medical & Paramedical">
+                                            <option value="DMLT">DMLT</option>
+                                            <option value="B.Sc. Nursing">B.Sc. Nursing</option>
+                                            <option value="B.Sc. MLT">B.Sc. MLT</option>
+                                            <option value="B.Sc. Radiology">B.Sc. Radiology</option>
+                                            <option value="B.Sc. Anaesthesia Technology">B.Sc. Anaesthesia Technology</option>
+                                            <option value="B.Sc. Operation Theater Technology">B.Sc. Operation Theater Technology</option>
+                                            <option value="Physiotherapy">Physiotherapy</option>
+                                            <option value="B. Pharmacy">B. Pharmacy</option>
+                                            <option value="D. Pharmacy">D. Pharmacy</option>
+                                            <option value="Diploma Radiology">Diploma Radiology</option>
+                                            <option value="B.D.S">B.D.S</option>
+                                            <option value="B.A.M.S">B.A.M.S</option>
+                                            <option value="B.H.M.S">B.H.M.S</option>
+                                            <option value="B.U.M.S">B.U.M.S</option>
+                                        </optgroup>
+
+                                        <optgroup label="Management & Commerce">
+                                            <option value="B.Com">B.Com</option>
+                                            <option value="BBM">BBM</option>
+                                            <option value="BBA">BBA</option>
+                                            <option value="MBA">MBA</option>
+                                            <option value="MBA Integrated">MBA Integrated</option>
+                                            <option value="PGDM">PGDM</option>
+                                            <option value="BHM (Hotel Management)">BHM (Hotel Management)</option>
+                                            <option value="M.Com">M.Com</option>
+                                        </optgroup>
+
+                                        <optgroup label="Education & Law">
+                                            <option value="LLB">LLB</option>
+                                            <option value="Integrated LLB (5 Years)">Integrated LLB (5 Years)</option>
+                                            <option value="B.Ed">B.Ed</option>
+                                            <option value="D.Ed">D.Ed</option>
+                                            <option value="B.P.Ed">B.P.Ed</option>
+                                            <option value="D.P.Ed">D.P.Ed</option>
+                                        </optgroup>
+
+                                        <optgroup label="Agriculture & Other">
+                                            <option value="B.Sc. Agriculture">B.Sc. Agriculture</option>
+                                            <option value="Diploma in Agriculture">Diploma in Agriculture</option>
+                                            <option value="Fashion Designing">Fashion Designing</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="reference">Coordinator Reference No.</label>
+                                    <input type="text" name="reference" id="reference" placeholder="If Not Leave Blank">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 04 -->
+                    <div class="reg-section">
+                        <div class="reg-marker">04</div>
+                        <div class="reg-section-head">
+                            <div>
+                                <span class="reg-section-tag">Section 04</span>
+                                <h3>Declaration</h3>
+                            </div>
+                        </div>
+                        <div class="reg-divider"></div>
+
+                        <div class="reg-declare-box">
+                            <strong>Declaration</strong>
+                            <label>
+                                <input type="checkbox" name="declaration_main" required>
+                                <span>
+                                    मुझे यह जानकारी है कि प्रवेश (Admission) के बाद रहने-खाने (हॉस्टल-फी) तथा परीक्षा शुल्क मुझे स्वयं अदा करने होंगे। नामांकन प्रक्रिया पूर्ण होने के बाद, कोर्स की पूरी अवधि तक मुझे कॉलेज परिसर/हॉस्टल में रहकर कॉलेज के नियमों एवं अनुशासन का पालन करते हुए कोर्स पूर्ण करना होगा।<br><br>
+                                    I am aware that after the admission and enrollment process, I will have to pay the hostel fee (food and accommodation) and examination fee by myself. I also agree that after completing the enrollment process, I must stay in the college hostel premises and follow all the rules and discipline of the institution until the course is completed.
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="reg-declare-box">
+                            <strong>Registration Fee Declaration</strong>
+                            <label>
+                                <input type="checkbox" name="declaration_fee" required>
+                                <span>I understand that a registration fee of ₹1000 must be paid at the time of registration, which is mandatory and non-refundable.</span>
+                            </label>
+                        </div>
+
+                        <div class="reg-terms-row">
+                            <input type="checkbox" id="ts">
+                            <label for="ts" style="margin:0; font-weight:500;">I Agree to All Terms &amp; Conditions</label>
+                            <a href="/privacypolicy" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 05 -->
+                    <div class="reg-section" style="margin-bottom:8px;">
+                        <div class="reg-marker">05</div>
+                        <div class="reg-section-head">
+                            <div>
+                                <span class="reg-section-tag">Section 05</span>
+                                <h3>Payment</h3>
+                            </div>
+                        </div>
+                        <div class="reg-divider"></div>
+
+                        <div class="reg-payment-card">
+                            <h4>Registration Fee: <span>₹1000</span></h4>
+                            <p>Scan the QR Code below to make payment</p>
+                            <img src="{% static 'images/payment_qr.jpeg' %}" alt="Payment QR Code">
+                        </div>
+
+                        <!-- Screenshot Upload (kept disabled as in original)
+                        <div class="form-group">
+                            <label>Upload Payment Screenshot*</label>
+                            <input type="file" name="payment_proof" required>
+                        </div>
+                        -->
+
+                        <div class="reg-submit-wrap">
+                            <button type="submit" class="btn v3">Submit Registration</button>
+                        </div>
+                    </div>
+
+                </div><!-- /.reg-form-shell -->
+                </form>
+
+            </div><!-- /.reg-card -->
+        </div>
     </section>
 
 
@@ -517,7 +722,5 @@ function validateform() {
     }
 }
 </script>
-
-  
 
 {%endblock%}
