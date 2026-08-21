@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<section class="pt-100 pb-80" style="margin-top:90px;">
+
 <!-- ================= PAGE HEADER ================= -->
 <div class="page-header-banner">
     <div class="container">
         <span class="hero-tag">About Unnati</span>
+        <h1>About Us</h1>
+        <p class="breadcrumb-line"><a href="/">Home</a> &nbsp;/&nbsp; About Us</p>
     </div>
 </div>
-
 
 <!-- ================= CHAIRMAN / ABOUT ================= -->
 <section class="pt-100 pb-80">
@@ -43,15 +44,12 @@
                         <p align="justify">
                             The trust operates with the support of Rosemine Educational Trust and is committed to ensuring that financial difficulties do not become a barrier to education. The chairman strongly believes that even if resources are limited, education should never be abandoned.
                         </p>
+                    </div>
 
-                        <p align="justify">
-                            Chairman Mr. Samar Tanweer is dedicated to supporting students who are forced to discontinue their studies due to high college fees. His vision is to stand by such students and help them complete their education with dignity.
-                        </p>
-
-                       <!-- <p align="justify">
-                            Through the mission “Shikshit Bharat, Viksit Bharat”, students are encouraged to pursue their dreams. The trust believes true success is measured not just by degrees, but by character and values.
-                        </p>
-                        -->
+                    <div class="chairman-quote">
+                        <i class="ri-double-quotes-l"></i>
+                        <p>Chairman Mr. Samar Tanweer is dedicated to supporting students who are forced to discontinue their studies due to high college fees. His vision is to stand by such students and help them complete their education with dignity.</p>
+                        <span>— Samar Tanweer, Chairman</span>
                     </div>
                 </div>
             </div>
@@ -99,7 +97,7 @@
                         All admissions are provided only in government-approved institutions recognized by AICTE, PCI, NCI, NCBT, NBA, or NAAC.
                     </p>
 
-                    <p align="justify">
+                    <p align="justify" class="mb-0">
                         Interested students can apply through the official website:
                         <a href="http://www.unnatitrust.in/">www.unnatitrust.in</a>
                     </p>
@@ -111,11 +109,11 @@
 </section>
 
 <!-- ================= MISSION & VISION ================= -->
-<section class="pb-70" style="background:var(--uet-bg-soft); padding-top:20px;">
+<section class="pb-70" style="background:var(--uet-bg-soft); padding-top:70px;">
     <div class="container">
         <div class="row g-4">
             <div class="col-md-6">
-                <div class="icon-feature-box text-start" style="text-align:left;">
+                <div class="icon-feature-box text-start">
                     <div class="icon-circle" style="margin:0 0 18px;"><i class="ri-flag-2-fill"></i></div>
                     <h5>Our Mission</h5>
                     <p>
@@ -127,7 +125,7 @@
             </div>
 
             <div class="col-md-6">
-                <div class="icon-feature-box text-start" style="text-align:left;">
+                <div class="icon-feature-box text-start">
                     <div class="icon-circle" style="margin:0 0 18px;"><i class="ri-eye-fill"></i></div>
                     <h5>Our Vision</h5>
                     <p>
@@ -154,7 +152,7 @@
                         </li>
                         <li>
                             <div class="icon-badge"><i class="ri-compass-3-fill"></i></div>
-                            <div><strong>Course & College Guidance</strong><span class="desc">Personalised guidance for choosing the right course and college.</span></div>
+                            <div><strong>Course &amp; College Guidance</strong><span class="desc">Personalised guidance for choosing the right course and college.</span></div>
                         </li>
                         <li>
                             <div class="icon-badge"><i class="ri-file-list-3-fill"></i></div>
@@ -162,7 +160,7 @@
                         </li>
                         <li>
                             <div class="icon-badge"><i class="ri-earth-fill"></i></div>
-                            <div><strong>Support for India & Nepal</strong><span class="desc">Open to students applying from across India and Nepal.</span></div>
+                            <div><strong>Support for India &amp; Nepal</strong><span class="desc">Open to students applying from across India and Nepal.</span></div>
                         </li>
                         <li>
                             <div class="icon-badge"><i class="ri-user-voice-fill"></i></div>
@@ -176,7 +174,7 @@
 </section>
 
 <!-- ================= IMPACT ================= -->
-<section class="pb-100">
+<section class="pt-100 pb-100">
     <div class="container">
         <div class="section-title style1 text-center mb-40">
             <span>Our Reach</span>
@@ -218,11 +216,22 @@
     </div>
 </section>
 
+<!-- ================= CLOSING CTA ================= -->
+<section class="pb-100">
+    <div class="container">
+        <div class="cta-strip">
+            <h3>Ready to Begin Your Admission Journey?</h3>
+            <p>Apply now and let Unnati Trust take care of your tuition fees.</p>
+            <a href="{% url 'registration' %}" class="btn v1">Apply for Admission</a>
+        </div>
+    </div>
+</section>
+
 <style>
     /* ---------- PAGE HEADER BANNER ---------- */
     .page-header-banner {
         background: linear-gradient(120deg, var(--uet-navy-dark) 0%, var(--uet-navy) 60%, var(--uet-navy-mid) 100%);
-        padding: 70px 0 40px;
+        padding: 150px 0 46px;
         text-align: center;
     }
 
@@ -236,14 +245,14 @@
         text-transform: uppercase;
         padding: 6px 14px;
         border-radius: 20px;
-        margin-bottom: 14px;
+        margin-bottom: 16px;
     }
 
     .page-header-banner h1 {
         color: #fff;
         font-family: 'PT Serif', serif;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 34px;
         margin-bottom: 10px;
     }
 
@@ -251,11 +260,18 @@
         color: #cfd8e3;
         font-size: 13.5px;
         margin-bottom: 0;
+        font-family: 'Poppins', sans-serif;
     }
 
     .page-header-banner .breadcrumb-line a {
         color: var(--uet-gold-light);
         text-decoration: none;
+        font-weight: 600;
+    }
+
+    @media (max-width: 767px) {
+        .page-header-banner { padding: 120px 0 36px; }
+        .page-header-banner h1 { font-size: 26px; }
     }
 
     /* ---------- CHAIRMAN PORTRAIT ---------- */
@@ -298,6 +314,38 @@
         font-size: 12.5px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+    }
+
+    /* ---------- CHAIRMAN QUOTE ---------- */
+    .chairman-quote {
+        background: var(--uet-white);
+        border-left: 4px solid var(--uet-gold);
+        border-radius: 8px;
+        padding: 22px 24px;
+        box-shadow: 0 4px 14px rgba(15, 42, 74, 0.06);
+        margin-top: 22px;
+        position: relative;
+    }
+
+    .chairman-quote i {
+        color: var(--uet-gold);
+        font-size: 26px;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .chairman-quote p {
+        color: var(--uet-text);
+        font-size: 14.5px;
+        font-style: italic;
+        line-height: 1.75;
+        margin-bottom: 10px;
+    }
+
+    .chairman-quote span {
+        color: var(--uet-navy);
+        font-weight: 700;
+        font-size: 13px;
     }
 
     /* ---------- OBJECTIVE / ATTENTION BOX ---------- */
