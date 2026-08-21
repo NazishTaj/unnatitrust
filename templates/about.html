@@ -436,6 +436,7 @@
         background: var(--uet-bg-soft);
         border-radius: 12px;
         padding: 22px 20px;
+        text-align: left;
         transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
     }
 
@@ -471,14 +472,24 @@
         color: var(--uet-navy);
         font-weight: 700;
         font-size: 15px;
-        margin-bottom: 6px;
+        margin: 0 0 6px;
+        padding: 0;
+        text-align: left;
+        list-style: none;
+    }
+
+    .fact-card h5::before,
+    .fact-card h5::after {
+        content: none !important;
     }
 
     .fact-card p {
         color: var(--uet-muted);
         font-size: 13.5px;
         line-height: 1.6;
-        margin-bottom: 0;
+        margin: 0;
+        padding: 0;
+        text-align: left;
     }
 
     .objective-apply-row {
