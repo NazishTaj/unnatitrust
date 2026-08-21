@@ -37,12 +37,14 @@
                         <span>About us</span>
                         <h2>Unnati Educational and Charitable Trust</h2>
 
-                        <p align="justify">
-                            Unnati Educational and Charitable Trust is an organization dedicated to spreading the light of education and removing the darkness of ignorance from students' lives. The trust works with the mission of guiding students away from uncertainty and towards a brighter and more secure future.
-                        </p>
+                        <div class="info-pills">
+                            <span class="pill"><i class="ri-checkbox-circle-fill"></i> 100% Fee Coverage</span>
+                            <span class="pill"><i class="ri-checkbox-circle-fill"></i> India &amp; Nepal</span>
+                            <span class="pill"><i class="ri-checkbox-circle-fill"></i> Govt-Approved Colleges Only</span>
+                        </div>
 
                         <p align="justify">
-                            The trust operates with the support of Rosemine Educational Trust and is committed to ensuring that financial difficulties do not become a barrier to education. The chairman strongly believes that even if resources are limited, education should never be abandoned.
+                            Unnati Educational and Charitable Trust spreads the light of education and removes the darkness of ignorance from students' lives — guiding them away from uncertainty and towards a brighter, more secure future. Operating with the support of Rosemine Educational Trust, it is committed to ensuring financial difficulty never becomes a barrier: the chairman believes that even with limited resources, education should never be abandoned.
                         </p>
                     </div>
 
@@ -60,19 +62,44 @@
         <div class="row mt-5">
             <div class="col-12">
                 <div class="about-subpara objective-card">
+                    <span class="obj-eyebrow">Why We Exist</span>
                     <h2>Our Objective</h2>
-
-                    <p align="justify">
-                        The primary objective of the Unnati Educational and Charitable Trust is to encourage financially weak and deserving students to pursue higher education. The trust supports such students by taking full responsibility for their college tuition fees.
+                    <p align="justify" class="objective-intro">
+                        Unnati exists to make sure financially weak and deserving students never have to give up on higher education. Here's exactly what that means for you:
                     </p>
 
-                    <p align="justify">
-                        The trust aims to improve the country's Gross Enrollment Ratio by helping needy students enroll in higher education. Students with at least 50% marks in Class 10 or 12 can apply.
-                    </p>
-
-                    <p align="justify">
-                        The financial support provided by the trust is a scholarship, not a loan, and students are not required to repay the college fees.
-                    </p>
+                    <div class="objective-fact-grid">
+                        <div class="fact-card">
+                            <div class="fact-icon"><i class="ri-money-rupee-circle-fill"></i></div>
+                            <h5>Scholarship, Not a Loan</h5>
+                            <p>Full tuition fee responsibility taken by the trust — nothing to repay, ever.</p>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-icon"><i class="ri-graduation-cap-fill"></i></div>
+                            <h5>Simple Eligibility</h5>
+                            <p>Minimum 50% marks in Class 10 or 12 is all it takes to apply.</p>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-icon"><i class="ri-line-chart-fill"></i></div>
+                            <h5>Building an Educated India</h5>
+                            <p>Every enrollment helps raise the country's Gross Enrollment Ratio.</p>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-icon"><i class="ri-wallet-3-fill"></i></div>
+                            <h5>Only Nominal Charges</h5>
+                            <p>You pay just accommodation &amp; examination charges — nothing more.</p>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-icon"><i class="ri-shield-check-fill"></i></div>
+                            <h5>No Scholarship Exam</h5>
+                            <p>Direct admission — stay cautious of fake scholarship tests.</p>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-icon"><i class="ri-award-fill"></i></div>
+                            <h5>Recognized Institutions Only</h5>
+                            <p>Admissions only in AICTE, PCI, NCI, NCBT, NBA or NAAC approved colleges.</p>
+                        </div>
+                    </div>
 
                     <!-- Highlight box -->
                     <div class="attention-box">
@@ -85,22 +112,10 @@
                         </div>
                     </div>
 
-                    <p align="justify" class="mt-4">
-                        Students only need to pay for accommodation and examination charges, which are nominal.
-                    </p>
-
-                    <p align="justify">
-                        Admission does not require any scholarship examination. Students should stay cautious of fake scholarship tests.
-                    </p>
-
-                    <p align="justify">
-                        All admissions are provided only in government-approved institutions recognized by AICTE, PCI, NCI, NCBT, NBA, or NAAC.
-                    </p>
-
-                    <p align="justify" class="mb-0">
-                        Interested students can apply through the official website:
-                        <a href="http://www.unnatitrust.in/">www.unnatitrust.in</a>
-                    </p>
+                    <div class="objective-apply-row">
+                        <p class="mb-0">Ready to apply? Start your registration below.</p>
+                        <a href="{% url 'registration' %}" class="btn v1">Apply Now</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -316,6 +331,33 @@
         letter-spacing: 0.5px;
     }
 
+    /* ---------- INFO PILLS ---------- */
+    .info-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 4px 0 18px;
+    }
+
+    .info-pills .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--uet-bg-soft);
+        border: 1px solid #eadfd0;
+        color: var(--uet-navy);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 12.5px;
+        padding: 7px 14px;
+        border-radius: 20px;
+    }
+
+    .info-pills .pill i {
+        color: var(--uet-gold-dark);
+        font-size: 14px;
+    }
+
     /* ---------- CHAIRMAN QUOTE ---------- */
     .chairman-quote {
         background: var(--uet-white);
@@ -349,12 +391,110 @@
     }
 
     /* ---------- OBJECTIVE / ATTENTION BOX ---------- */
+    .obj-eyebrow {
+        display: block;
+        color: var(--uet-gold-dark);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+    }
+
     .objective-card h2 {
         color: var(--uet-navy);
         font-family: 'PT Serif', serif;
         font-weight: 700;
         font-size: 24px;
         margin-bottom: 14px;
+    }
+
+    .objective-intro {
+        color: var(--uet-muted);
+        font-size: 15px;
+        max-width: 760px;
+        margin-bottom: 28px !important;
+    }
+
+    .objective-fact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-bottom: 26px;
+    }
+
+    @media (max-width: 991px) {
+        .objective-fact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 575px) {
+        .objective-fact-grid { grid-template-columns: 1fr; }
+    }
+
+    .fact-card {
+        background: var(--uet-bg-soft);
+        border-radius: 12px;
+        padding: 22px 20px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .fact-card:hover {
+        transform: translateY(-4px);
+        background: var(--uet-white);
+        box-shadow: 0 12px 26px rgba(15, 42, 74, 0.1);
+    }
+
+    .fact-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--uet-navy) 0%, var(--uet-navy-mid) 100%);
+        color: var(--uet-gold-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 19px;
+        margin-bottom: 14px;
+    }
+
+    .fact-card h5 {
+        color: var(--uet-navy);
+        font-weight: 700;
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .fact-card p {
+        color: var(--uet-muted);
+        font-size: 13.5px;
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+
+    .objective-apply-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 14px;
+        background: var(--uet-bg-soft);
+        border-radius: 10px;
+        padding: 18px 22px;
+        margin-top: 26px;
+    }
+
+    .objective-apply-row p {
+        color: var(--uet-navy);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 14.5px;
+    }
+
+    .objective-apply-row .btn.v1 {
+        padding: 12px 30px;
+        font-size: 12.5px;
+        white-space: nowrap;
     }
 
     .attention-box {
