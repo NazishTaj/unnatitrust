@@ -78,49 +78,110 @@
 <!-- ================= ABOUT ================= -->
 <section class="about-wrap style2 ptb-100">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-5 mb-4 mb-lg-0">
-                <div class="about-img">
-                    <img src="{% static 'images/logo2.jpeg' %}" style="width:100%; border-radius:16px; box-shadow:0 20px 45px rgba(15,42,74,0.15);">
+        <div class="about-modern">
+
+            <div class="row align-items-center g-5">
+
+                <!-- LEFT IMAGE -->
+                <div class="col-lg-5">
+                    <div class="about-image-box">
+                        <img src="{% static 'images/logo2.jpeg' %}" alt="Unnati Educational and Charitable Trust">
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="about-content">
-                    <div class="section-title text-left style1">
-                        <span>About Us</span>
-                        <h2>Unnati Educational and Charitable Trust</h2>
-                        <p>Unnati Educational and Charitable Trust is one such organization which is spreading the light of knowledge by removing the darkness of ignorance from the lives of the students. Our task is taking many students out of the bleak future and putting them in the lap of light. Our aim is also to bring light into the lives of the students.</p>
+
+                <!-- RIGHT CONTENT -->
+                <div class="col-lg-7">
+
+                    <div class="about-content-modern">
+
+                        <span class="about-tag">ABOUT US</span>
+
+                        <h2>
+                            Unnati Educational<br>
+                            <span>and Charitable Trust</span>
+                        </h2>
+
+                        <div class="about-divider"></div>
+
+                        <p class="about-description">
+                            Unnati Educational and Charitable Trust is an organization
+                            dedicated to spreading the light of knowledge by removing
+                            the darkness of ignorance from the lives of students.
+                            Our mission is to support deserving students and guide
+                            them towards a brighter future through higher education.
+                        </p>
+
+                        <!-- HIGHLIGHTS -->
+                        <div class="about-highlights">
+
+                            <div class="about-highlight">
+                                <div class="highlight-icon">
+                                    <i class="ri-service-fill"></i>
+                                </div>
+
+                                <div>
+                                    <h5>Full Support</h5>
+                                    <p>
+                                        End-to-end support for every enrolled student,
+                                        from admission to graduation.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="about-highlight">
+                                <div class="highlight-icon">
+                                    <i class="ri-team-fill"></i>
+                                </div>
+
+                                <div>
+                                    <h5>Excellent Team</h5>
+                                    <p>
+                                        Experienced consultants across various fields,
+                                        always ready to help.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- OUR AIM -->
+                        <div class="our-aim-modern">
+
+                            <div class="aim-icon">
+                                <i class="ri-focus-3-line"></i>
+                            </div>
+
+                            <div class="aim-content">
+
+                                <span>OUR AIM</span>
+
+                                <h4>Empowering Students Through Education</h4>
+
+                                <p>
+                                    Our aim is to motivate financially weak and needy
+                                    students to pursue higher education by taking
+                                    responsibility for their 100% college fees and
+                                    helping them move towards a brighter future.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <a href="{% url 'about' %}" class="btn v1 about-read-btn">
+                            <i class="ri-eye-line"></i>
+                            Read More
+                        </a>
+
                     </div>
 
-                    <ul class="about-icon-list">
-                        <li>
-                            <div class="icon-badge"><i class="ri-service-fill"></i></div>
-                            <div>
-                                <strong>Full Support</strong>
-                                <span class="desc">End-to-end support for every enrolled student, from admission to graduation.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="icon-badge"><i class="ri-team-fill"></i></div>
-                            <div>
-                                <strong>Excellent Team</strong>
-                                <span class="desc">Experienced consultants across fields, always ready to help.</span>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="about-subpara">
-                        <h5><span><img src="{% static 'images/goal.svg' %}" alt="Image"></span>Our Aim</h5>
-                        <p>The aim of Unnati Educational and Charitable Trust is to motivate the financially weak and needy students of the society to get higher education and to divert them towards higher education by taking responsibility of their 100% college fees.</p>
-                    </div>
-
-                    <a href="{% url 'about' %}" class="btn v1"> <i class="ri-eye-line"></i> Read More</a>
                 </div>
+
             </div>
+
         </div>
     </div>
 </section>
-
 <!-- ================= PROMO CTA BANNER ================= -->
 <div class="promo-banner-wrap style4 promo-bg-1 bg-f ptb-100" style="background: linear-gradient(135deg, rgba(8,26,48,0.94) 0%, rgba(15,42,74,0.88) 100%);">
     <div class="overlay bg-midnight op-8"></div>
