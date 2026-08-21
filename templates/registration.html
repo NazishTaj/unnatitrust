@@ -600,9 +600,12 @@
                         <div class="reg-divider"></div>
 
                         <div class="reg-payment-card">
-                            <h4>Registration Fee: <span>₹1000</span></h4>
+                            <h4>Registration Fee: <span>Rs 1000</span></h4>
                             <p>Scan the QR Code below to make payment</p>
-                            <img src="{% static 'images/payment_qr.jpeg' %}" alt="Payment QR Code">
+                        
+                            <img src="{% static 'images/payment_qr.jpeg' %}"
+                                 alt="Payment QR Code"
+                                 style="width: 250px; height: 250px; object-fit: contain; max-width: 100%;">
                         </div>
 
                         <!-- Screenshot Upload (kept disabled as in original)
