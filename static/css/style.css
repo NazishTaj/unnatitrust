@@ -11070,18 +11070,3 @@ input:checked+.slider:before {
 	font-size: 16px;
 }
 
-/* Mobile menu background scroll lock */
-@media only screen and (max-width: 991px) {
-
-    body.mobile-menu-open {
-        overflow: hidden !important;
-        height: 100vh !important;
-    }
-
-    .main-menu-wrap.open {
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch;
-    }
-
-}
-
