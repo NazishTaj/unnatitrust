@@ -82,8 +82,7 @@
         }
     });
 
-    // Move mobile menu directly under body to avoid homepage overlap issues
-    $('.main-menu-wrap').appendTo('body');
+
     $('.mobile-menu a').on('click', function() {
         $('.main-menu-wrap').addClass('open');
         $('.mobile-bar-wrap.style2 .mobile-menu').addClass('open');
