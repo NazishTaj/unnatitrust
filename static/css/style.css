@@ -10964,16 +10964,16 @@ input:checked+.slider:before {
 }
 .main-menu-wrap {
     width: 100%;
-    position: fixed;
+    position: absolute;
     background: #F3F6FB;
-    z-index: 99999;
-    top: 0;
-    left: -100%;
+    z-index: 999;
+    top: 140px;
     height: 100vh;
-    height: 100dvh;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    left: -100%;
     padding: 55px 20px 30px;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
@@ -11069,24 +11069,5 @@ input:checked+.slider:before {
 	margin-right: 6px;
 	font-size: 16px;
 }
-@media only screen and (max-width: 991px) {
-    .main-menu-wrap,
-    .main-menu-wrap.style1 {
-        position: fixed !important;
-        top: 0 !important;
-        left: -100% !important;
-        width: 100% !important;
-        height: 100dvh !important;
-        overflow-y: auto !important;
-        z-index: 99999 !important;
-    }
-
-    .main-menu-wrap.open,
-    .main-menu-wrap.style1.open {
-        left: 0 !important;
-    }
-}
-
-
 
 
