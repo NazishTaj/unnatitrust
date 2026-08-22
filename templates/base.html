@@ -833,6 +833,18 @@
                 opacity: 1;
             }
         }
+        /* Fix desktop gap between header and carousel */
+        @media only screen and (min-width: 601px) {
+            .slick-dotted.slick-slider {
+                padding-top: 0 !important;
+                margin-top: 0 !important;
+            }
+        
+            .carousel {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
