@@ -11070,5 +11070,23 @@ input:checked+.slider:before {
 	font-size: 16px;
 }
 
+@media only screen and (max-width: 991px) {
+    .main-menu-wrap,
+    .main-menu-wrap.style1 {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100dvh !important;
+        overflow-y: auto !important;
+        z-index: 99999 !important;
+    }
+
+    .main-menu-wrap.open,
+    .main-menu-wrap.style1.open {
+        left: 0 !important;
+    }
+}
+
 
 
